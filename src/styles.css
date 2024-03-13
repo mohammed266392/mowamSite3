@@ -2,7 +2,7 @@
 :root {
 
 	/* Temmplate 2 */
-    /* --main-bg-color: rgb(255, 255, 255);
+     --main-bg-color: rgb(255, 255, 255);
     --main-color: #383026ff;
 	--main-color2: #007994ff;
 	--main-color3: #125687ff;
@@ -10,9 +10,14 @@
 	--main-color-rgba: 56, 48, 38;
 	--main-color2-rgba: 0, 121, 148;
 	--main-color3-rgba: 18, 86, 135;
+
+	--weight-font-header : 400;
+	--size-font-header : x-large;
+	--size-font-header-middle : large;
+
     --taille-standard : 225px;
 	--largeur-header : 88px;
-	--opacity:0.3; */
+	--opacity:0.3; 
 	/* Temmplate 1 
     --main-bg-color: #ffffff;
     --main-color: #000000;
@@ -56,7 +61,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: 'Work Sans', sans-serif;
+	font-family: "Roboto";
+	/* font-family: 'Work Sans', sans-serif; */
 }
 ol, ul {
 	list-style: none;
@@ -73,3 +79,4 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+

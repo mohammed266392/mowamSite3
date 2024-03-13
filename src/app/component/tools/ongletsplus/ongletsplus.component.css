@@ -8,8 +8,10 @@
 }
 
 .onglet{
-  font-weight: 400;
-  font-size: large;
+  font-weight: var(--weight-font-header);
+  font-size: var(--size-font-header-middle);
+  /* font-weight: 400;
+  font-size: large; */
   display: flex;
   align-items: center;
   cursor: pointer;

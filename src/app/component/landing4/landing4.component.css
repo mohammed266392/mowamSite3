@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+}
+.container_gauche{
+    width: 40%;
+}
+.container_droite{
+    width: 60%;
+    overflow: hidden;
+    border-radius: 7px;
+}
+.container_droite_image{
+    width: 100%;
+    height: 100%;
+}
