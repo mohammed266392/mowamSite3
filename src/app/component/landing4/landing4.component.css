@@ -13,3 +13,39 @@
     width: 100%;
     height: 100%;
 }
+.container_gauche_text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container_gauche_text-title{
+    font-size: xxx-large;
+}
+.container_gauche_text-description{
+    font-size: xx-large;
+}
+.container_gauche_text-description2{
+    font-size: larger;
+}
+.effect{
+    display: flex;
+    height: 60px;
+    align-items: center;
+}   
+.container_gauche_text-subtitle{
+    font-size: xxx-large;
+}
+.block_hide{
+    flex-grow: 2;
+    position: relative;
+    background-color: aqua;
+    height: 60px; 
+}
+.block_hide-bar{
+    position: absolute;
+    height: 100px;
+    width: 2px;
+    background-color: black;
+    transform: translate(0%, -20px);
+}
