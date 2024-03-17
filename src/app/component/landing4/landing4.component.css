@@ -29,23 +29,56 @@
     font-size: larger;
 }
 .effect{
+    position: relative;
     display: flex;
     height: 60px;
-    align-items: center;
+    justify-content: flex-end;
 }   
 .container_gauche_text-subtitle{
-    font-size: xxx-large;
-}
-.block_hide{
-    flex-grow: 2;
-    position: relative;
+    position: absolute;
     background-color: aqua;
-    height: 60px; 
+    font-size: xxx-large;
+    top: 50%;
+    left: 0px;
+    transform: translate(0, -50%);
+    z-index: -1;
 }
+
+
+
+ .block_hide{
+    position: relative;
+    height: 100%;
+    background-color: beige;
+    width: 0%; /* Largeur initiale */
+    /* animation: growWidth 1s ease infinite; */
+    /* transition: width 1s ease;
+    animation: hideAndShow  timing-function delay iteration-count direction fill-mode; */
+    
+}
+.block_hide.growWidth{
+    animation: growWidth 1s ease;
+}
+
 .block_hide-bar{
     position: absolute;
     height: 100px;
     width: 2px;
     background-color: black;
     transform: translate(0%, -20px);
+
 }
+
+@keyframes growWidth {
+    0% {
+        width: 0%;
+      }
+    50% {
+         width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+
+

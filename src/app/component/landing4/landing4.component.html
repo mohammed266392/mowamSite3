@@ -3,12 +3,17 @@
         <div class="container_gauche_text">
             <div class="container_gauche_text-title">The Ultimate</div>
             <div class="effect">
-                <div class="container_gauche_text-subtitle">Creative</div>
-                <div class="block_hide">
+                <!-- <div class="container_gauche_text-subtitle">{{texts[currentIndex]}}</div> -->
+                <div class="container_gauche_text-subtitle">
+                    {{texts[currentIndex]}}
+                    
+                    <!-- <div class="word-displayed">Creative</div> -->
+                </div>
+                <div [ngClass]="{'block_hide':true, growWidth: activateEffect}">
                     <span class="block_hide-bar"></span>
                 </div>
             </div>
-            
+            <!-- {{currentIndex}} -->
             <div class="container_gauche_text-description">Website Builder</div>
             <div class="container_gauche_text-description2">Trusted by beginners, marketers & professionals; Built with usability and performance in mind</div>
             <div class="container_gauche_text-button">Start Building</div>
@@ -25,3 +30,9 @@
        <img src="./../../../assets/images/landing.jpg" alt="" class="container_droite_image"> 
     </div>
 </div>
+
+
+
+
+
+
