@@ -1,20 +1,16 @@
 <div class="container">
     <div class="container_gauche">
         <div class="container_gauche_text">
-            <div class="container_gauche_text-title">The Ultimate</div>
+            <div class="container_gauche_text-title">MOWAM technologies</div>
             <div class="effect">
-                <!-- <div class="container_gauche_text-subtitle">{{texts[currentIndex]}}</div> -->
                 <div class="container_gauche_text-subtitle">
-                    {{texts[currentIndex]}}
-                    
-                    <!-- <div class="word-displayed">Creative</div> -->
+                    {{text}}
                 </div>
-                <div [ngClass]="{'block_hide':true, growWidth: activateEffect}">
+                <div [ngClass]="{'block_hide':true, hide: hide}">
                     <span class="block_hide-bar"></span>
                 </div>
             </div>
-            <!-- {{currentIndex}} -->
-            <div class="container_gauche_text-description">Website Builder</div>
+            <div class="container_gauche_text-description">Osez faire confiance</div>
             <div class="container_gauche_text-description2">Trusted by beginners, marketers & professionals; Built with usability and performance in mind</div>
             <div class="container_gauche_text-button">Start Building</div>
             

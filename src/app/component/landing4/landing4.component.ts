@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-landing4',
@@ -9,29 +10,84 @@ import { Component } from '@angular/core';
   styleUrl: './landing4.component.css'
 })
 export class Landing4Component {
-  text = 'Creative'; // Texte initial
-  texts = ['Creative', 'Confiance', 'Fort'];
+
+ // Texte initial
+  test = 'TEST1'; // Texte initial
+  texts : string[] = ['Expertise reconnue', '100% transparent', 'Artisant du web'];
+  text : string = this.texts[0];
+  tests = ['TEST1', 'TEST2', 'TEST3'];
   currentIndex = 0;
-  activateEffect = false;
+  currentIndex1 = 0;
+  hide : boolean = false ;
+  displaySeconde = 0;
   // private intervalId: any;
 
   constructor() { 
-// Change le texte toutes les secondes
+    this.cycleActions()
     setInterval(() => {
-      this.activateEffect = true
-      
-    }, 2900);
+      this.displaySeconde = this.displaySeconde +1
+    },1000)
 
     setInterval(() => {
-
-      this.text = this.texts[this.currentIndex];
-      if(this.currentIndex + 1 == this.texts.length){
-        this.currentIndex = 0;
-      }else{
-        this.currentIndex = this.currentIndex + 1 ;
-      }
-      this.activateEffect = false;
-    }, 3000); 
+      this.cycleActions()
+    },5500)
   }
+
+  cycleActions() : void {
+    // Première action : masquer après 4500 ms
+    setTimeout(() => {
+      this.hide = true;
+    }, 4500);
+  
+    // Deuxième action : changer l'index après 5000 ms
+    setTimeout(() => {
+      this.currentIndex = this.currentIndex + 1;
+      if (this.currentIndex == this.texts.length) {
+        this.currentIndex = 0;
+      }
+      this.text = this.texts[this.currentIndex];
+    }, 5000);
+  
+    // Troisième action : afficher après 5500 ms
+    setTimeout(() => {
+      this.hide = false;
+    }, 5500);
+
+  }
+
+
+
+
+
+
+
+  //   setInterval(() => {
+  //     // console.log("hide1 : ",this.hide)
+  //     // this.hide = true;
+  //     // console.log("hide2 : ",this.hide)
+  //     this.currentIndex = this.currentIndex + 1 ;
+  //     if(this.currentIndex == this.texts.length){
+  //       this.currentIndex = 0;
+  //     }
+  //     setInterval(() => {
+  //       this.hide = false;
+  //       console.log("hide3 : ",this.hide)
+  //     },500);
+
+  //     setInterval(() => {
+  //       this.text = this.texts[this.currentIndex];
+
+  //     },1000);
+
+  //   }, 5000); 
+  //   // setInterval(() => {
+  //   //   this.activateEffect.next(true)
+  //   //   console.log("affiche la valeur activateEffect: ",this.activateEffect)
+  //   // }, 2500); 
+  // }
+
+  // function name(params:type) {
+    
+  
 
 }
