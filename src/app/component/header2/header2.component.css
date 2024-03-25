@@ -73,84 +73,83 @@
     }
     
     
-    @media screen and (max-width:500px) {
-        .header_milieu{
-            display: none;
-        }
-      .header_droite, .header_gauche{
-          min-width: inherit;
-      }
-      .header_droite_container{
-          display: none;
-      }
-      .header_gauche,.header_droite{
-          flex-shrink: 1;
-      }
-      .header_droite_desktop{
-          display: none;
-      }
-      .header_droite_mobile{
-          height: 100%;
-          max-width:130px;
-          display: flex;
-          justify-content: flex-end;
-      }
-      .container_menu_burger{
-          position: relative;
-          height: 100%;
-          width:53px;
-      }
+@media screen and (max-width:500px) {
     
-      .bar_haut,.bar_bas{
-          position: absolute;
-          z-index: 1;
-          height: 2px;
-          width: 100%;
-          transition: all 1s ease;
-          
-      }
-      .bar_haut{
-          transform: translate(0%,-50%);
-          top: 30%;
-          background-color: var(--main-color2);
-      }
-      .bar_bas{
-          transform: translate(0%,-50%);
-          top: 70%;
-          background-color: var(--main-color2);
-      }
-      .header_droite_mobile.is_clicked .bar_haut{
-          rotate: 315deg;
-          top: 50%;
-      }
-      .header_droite_mobile.is_clicked .bar_bas{
-          rotate: -315deg;
-          top: 50%;
-      }
-      .bar_milieu_container{
-          position: absolute;
-          z-index: 0;
-          display: flex;
-          height: 2px;
-          width: 100%;
-          transform: translate(0%,-50%);
-          top: 50%;
-      }
-      .bar_milieu_container_gauche,.bar_milieu_container_droite{
-          flex-basis: 0px;
-          /* background-color: var(--main-bg-color); */
-          flex-shrink: 0;
-          transition: flex-basis 1s ease;
-      }
-      .bar_milieu_container_milieu{
-          flex-basis: 100%;
-          background-color: var(--main-color2);
-          flex-shrink: 1;
-      }
-      .header_droite_mobile.is_clicked .bar_milieu_container_gauche{
-          flex-basis: 50%;
-      }
-      .header_droite_mobile.is_clicked .bar_milieu_container_droite{
-          flex-basis: 50%;
-      }
+    
+    .header_droite, .header_gauche{
+        min-width: inherit;
     }
+    .header_droite_container{
+        display: none;
+    }
+    .header_gauche,.header_droite{
+        flex-shrink: 1;
+    }
+    .header_droite_desktop{
+        display: none;
+    }
+    .header_droite_mobile{
+        height: 100%;
+        max-width:130px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .container_menu_burger{
+        position: relative;
+        height: 100%;
+        width:53px;
+    }
+
+    .bar_haut,.bar_bas{
+        position: absolute;
+        z-index: 1;
+        height: 2px;
+        width: 100%;
+        transition: all 1s ease;
+        
+    }
+    .bar_haut{
+        transform: translate(0%,-50%);
+        top: 30%;
+        background-color: var(--main-color2);
+    }
+    .bar_bas{
+        transform: translate(0%,-50%);
+        top: 70%;
+        background-color: var(--main-color2);
+    }
+    .header_droite_mobile.is_clicked .bar_haut{
+        rotate: 315deg;
+        top: 50%;
+    }
+    .header_droite_mobile.is_clicked .bar_bas{
+        rotate: -315deg;
+        top: 50%;
+    }
+    .bar_milieu_container{
+        position: absolute;
+        z-index: 0;
+        display: flex;
+        height: 2px;
+        width: 100%;
+        transform: translate(0%,-50%);
+        top: 50%;
+    }
+    .bar_milieu_container_gauche,.bar_milieu_container_droite{
+        flex-basis: 0px;
+        /* background-color: var(--main-bg-color); */
+        flex-shrink: 0;
+        transition: flex-basis 1s ease;
+    }
+    .bar_milieu_container_milieu{
+        flex-basis: 100%;
+        background-color: var(--main-color2);
+        flex-shrink: 1;
+    }
+    .header_droite_mobile.is_clicked .bar_milieu_container_gauche{
+        flex-basis: 50%;
+    }
+    .header_droite_mobile.is_clicked .bar_milieu_container_droite{
+        flex-basis: 50%;
+    }
+}
