@@ -1,94 +1,80 @@
 .container{
     display: flex;
+    color: white;
 }
 .container_gauche{
-    width: 40%;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 .container_droite{
-    width: 60%;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
-    border-radius: 7px;
 }
 .container_droite_image{
     width: 100%;
     height: 100%;
 }
 .container_gauche_text{
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
 }
 .container_gauche_text-title{
-    font-size: xxx-large;
+    font-size: 40px;
 }
 .container_gauche_text-description{
     font-size: xx-large;
 }
 .container_gauche_text-description2{
+    width: 90%;
     font-size: larger;
 }
+
 .effect{
+    width: 100%;
     overflow: hidden;
-    position: relative;
     display: flex;
     height: 60px;
-    justify-content: flex-end;
-}   
+    justify-content: space-between;
+}
 .container_gauche_text-subtitle{
-    position: absolute;
-    font-size: xxx-large;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
     text-wrap: nowrap;
-    top: 50%;
-    left: 0px;
-    transform: translate(0, -50%);
-    z-index: -1;
-}
-
-
-
- .block_hide{
-    position: relative;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    width: 0%;
-    transition: width 0.5s ease;
-    
-}
-.block_hide.hide{
+    overflow: hidden;
     width: 100%;
+    flex-shrink: 5;
 }
-.block_hide.show{
+.container_gauche_text-subtitle_content{
+    align-self: center;
+}
+.container_gauche_text-block1, .container_gauche_text-block2{
+    flex-shrink: 0;
     width: 0%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: width 0.5s ease;
+}
+.container_gauche_text-block1.hide, .container_gauche_text-block2.hide{
+    width : 50%;
 }
 
-.block_hide-bar{
-    position: absolute;
-    left: 0px;
-    height: 100px;
-    width: 2px;
-    background-color: black;
-    transform: translate(0%, -20px);
-}
-
-@media only screen and (max-width: 1000px) {
-    .container{
-        flex-direction: column;
+@media screen and (max-width:500px) {
+    
+    .container_gauche_text-block1, .container_gauche_text-block2{
+        width: 0%;
     }
-    .container_gauche, .container_droite{
-        width: 100%;
-    }
-    .container_gauche{
-        text-align: center;
-        height: 60vh;
-    }
-    .container_droite{
-        height: 40vh;
-    }
-
     .container_gauche_text-subtitle{
-        left: 50%;
-        transform: translate(-50%, -50%);
+        width: 100%;
     }
 
 }

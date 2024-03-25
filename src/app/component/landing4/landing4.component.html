@@ -3,16 +3,22 @@
         <div class="container_gauche_text">
             <div class="container_gauche_text-title">MOWAM technologies</div>
             <div class="effect">
-                <div class="container_gauche_text-subtitle">
-                    {{text}}
+                <div [ngClass]="{'container_gauche_text-block1': true, 'hide':hide}">
                 </div>
-                <div [ngClass]="{'block_hide':true, hide: hide}">
-                    <span class="block_hide-bar"></span>
+                <div class="container_gauche_text-subtitle">
+                    <div class="container_gauche_text-subtitle_content">
+                        {{text}}
+                        <!-- <span class="block_hide-bar"></span> -->
+                    </div>
+                   
+                </div>
+                <div  [ngClass]="{'container_gauche_text-block2': true, 'hide':hide}">
+                    <!-- <span class="block_hide-bar"></span> -->
                 </div>
             </div>
             <div class="container_gauche_text-description">Osez faire confiance</div>
-            <div class="container_gauche_text-description2">Trusted by beginners, marketers & professionals; Built with usability and performance in mind</div>
-            <div class="container_gauche_text-button">Start Building</div>
+            <div class="container_gauche_text-description2">Spécialiste du web reconnu, profitez d'une expértise de plus de 5 ans avec les plus grandes entreprise d'europe. Bénéficiez d'un accompagnement sur mesure pour votre transformation digitale.</div>
+            <div class="container_gauche_text-button">Découvrir les services</div>
             
 
 
@@ -23,7 +29,7 @@
         </div>
     </div>
     <div class="container_droite">
-       <img src="./../../../assets/images/landing.jpg" alt="" class="container_droite_image"> 
+       <img src="./../../../assets/images/landing1.jpg" alt="" class="container_droite_image"> 
     </div>
 </div>
 

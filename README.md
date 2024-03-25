@@ -27,3 +27,27 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 https://preview.themeforest.net/item/avada-responsive-multipurpose-theme/full_screen_preview/2833226?_ga=2.263724938.707666085.1710245365-402971084.1710245365
+
+## Palette de couleur
+
+Couleur Principale : Bleu Électrique (#007BFF)
+
+Représente la confiance, la sécurité et la technologie. Idéale pour les boutons d'appel à l'action et les liens.
+Couleurs Secondaires :
+
+Gris doux (#F8F9FA)
+Parfait pour les arrière-plans et permet aux éléments colorés de se démarquer sans créer une surcharge visuelle.
+Turquoise Clair (#17A2B8)
+Complète bien le bleu électrique, idéal pour les informations secondaires ou les éléments interactifs comme les infobulles ou les icônes.
+Couleur d'Accent : Jaune Solaire (#FFC107)
+
+Utilisez cette couleur pour attirer l'attention sur des éléments importants qui requièrent une action ou une attention particulière, tels que des badges promotionnels ou des notifications.
+Couleurs de Fond et de Texte :
+
+Blanc (#FFFFFF)
+Pour le fond, offre un contraste élevé avec le texte, rendant la lecture aisée.
+Charbon (#343A40)
+Une alternative douce au noir complet pour le texte, qui réduit la fatigue visuelle tout en restant suffisamment contrasté par rapport au blanc.
+Couleur d'Erreur : Rouge Cerise (#DC3545)
+
+Couleur vibrante pour attirer l'attention sur des messages d'erreur ou des avertissements.

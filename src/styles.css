@@ -3,10 +3,15 @@
 
 	/* Temmplate 2 */
      --main-bg-color: rgb(255, 255, 255);
-    --main-color: #383026ff;
+    --main-color: #343A40;
 	--main-color2: #007994ff;
 	--main-color3: #125687ff;
+	--bg-gris-doux: #F8F9FA;
+	--color-writing-header: #FFFFFF;
 
+
+	--bg-gris-doux-rgba: 248, 249, 250;
+	--bg-gris-doux-rgba1: 248, 249, 250;
 	--main-color-rgba: 56, 48, 38;
 	--main-color2-rgba: 0, 121, 148;
 	--main-color3-rgba: 18, 86, 135;

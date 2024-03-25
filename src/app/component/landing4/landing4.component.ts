@@ -25,10 +25,6 @@ export class Landing4Component {
   constructor() { 
     this.cycleActions()
     setInterval(() => {
-      this.displaySeconde = this.displaySeconde +1
-    },1000)
-
-    setInterval(() => {
       this.cycleActions()
     },5500)
   }
