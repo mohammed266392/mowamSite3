@@ -7,8 +7,9 @@
 @media screen and (max-width:500px) {
     .container_mobile{
         position: absolute;
+        padding-left: 10px;
         font-size: large;
-        background-color: rgba(var(--main-color-rgba), .8);
+        background-color: rgb(var(--bleu-marine-rgb));
         color: var(--main-bg-color);
         display: flex;
         flex-direction: column;
@@ -21,7 +22,7 @@
     }
 
     .container_mobile.is_clicked {
-        height: 250px;
+        height: 50vh;
         overflow :visible
     }
 

@@ -14,7 +14,7 @@ import { Onglet } from '../../models/object';
 export class Header2Component {
   onglets : Onglet[] = [
     new Onglet(0,'Home','home',[]),
-    new Onglet(1,'Nos Services','services',[]),
+    new Onglet(1,'Nos Services','nos-services',[]),
     new Onglet(2,'Contact','contact',[])
   
   ]

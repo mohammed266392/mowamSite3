@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -10,6 +11,8 @@ import { BehaviorSubject } from 'rxjs';
   styleUrl: './landing4.component.css'
 })
 export class Landing4Component {
+
+  router = inject(Router);
 
  // Texte initial
   test = 'TEST1'; // Texte initial
@@ -51,6 +54,9 @@ export class Landing4Component {
 
   }
 
+  navigateToMesService(){
+    this.router.navigateByUrl("/nos-services")
+  }
 
 
 

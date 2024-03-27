@@ -1,3 +1,11 @@
+.arriere_plan{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
 .container{
     display: flex;
     color: white;
@@ -9,16 +17,6 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-}
-.container_droite{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-.container_droite_image{
-    width: 100%;
-    height: 100%;
 }
 .container_gauche_text{
     display: flex;
@@ -34,8 +32,13 @@
     font-size: xx-large;
 }
 .container_gauche_text-description2{
+    margin: auto;
     width: 90%;
     font-size: larger;
+    background-color: rgb(var(--bleu-marine-rgb));
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 9px;
 }
 
 .effect{
@@ -46,6 +49,7 @@
     justify-content: space-between;
 }
 .container_gauche_text-subtitle{
+    position: relative;
     display: flex;
     justify-content: center;
     font-size: 40px;
@@ -54,6 +58,14 @@
     width: 100%;
     flex-shrink: 5;
 }
+.container_gauche_text-subtitle_souligne{
+    position: absolute;
+    bottom: 0;
+    width: 160px;
+    height: 1px;
+    background-color: var(--bg-gris-doux);
+}
+
 .container_gauche_text-subtitle_content{
     align-self: center;
 }
@@ -67,6 +79,55 @@
 .container_gauche_text-block1.hide, .container_gauche_text-block2.hide{
     width : 50%;
 }
+
+.button-64 {
+    margin: auto;
+    align-items: center;
+    background-image: linear-gradient(144deg,#FFC107, #5B42F3 50%,#17A2B8);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  .button-64:active,
+  .button-64:hover {
+    outline: 0;
+  }
+  
+  .button-64 span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  .button-64:hover span {
+    background: none;
+  }
+  
+  @media (min-width: 768px) {
+    .button-64 {
+      font-size: 18px;
+      min-width: 196px;
+    }
+  }
 
 @media screen and (max-width:500px) {
     

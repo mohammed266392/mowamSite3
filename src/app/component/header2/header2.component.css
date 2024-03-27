@@ -1,6 +1,7 @@
 .header{
     position: fixed;
     backdrop-filter: blur(3px);
+    background-color: rgba(var(--bleu-marine-rgb), .5);
     width: 100%;
     height: var(--largeur-header);
     display: flex;
@@ -111,12 +112,12 @@
 .bar_haut{
     transform: translate(0%,-50%);
     top: 30%;
-    background-color: var(--main-color2);
+    background-color: var(--bg-gris-doux);
 }
 .bar_bas{
     transform: translate(0%,-50%);
     top: 70%;
-    background-color: var(--main-color2);
+    background-color: var(--bg-gris-doux);
 }
 .header_droite_mobile.is_clicked .bar_haut{
     rotate: 315deg;
@@ -143,7 +144,7 @@
 }
 .bar_milieu_container_milieu{
     flex-basis: 100%;
-    background-color: var(--main-color2);
+    background-color: var(--bg-gris-doux);
     flex-shrink: 1;
 }
 .header_droite_mobile.is_clicked .bar_milieu_container_gauche{

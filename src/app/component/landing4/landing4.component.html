@@ -9,27 +9,27 @@
                     <div class="container_gauche_text-subtitle_content">
                         {{text}}
                     </div>
-                   
+                   <span class="container_gauche_text-subtitle_souligne"></span>
                 </div>
                 <div  [ngClass]="{'container_gauche_text-block2': true, 'hide':hide}">
                 </div>
             </div>
             <div class="container_gauche_text-description">Osez faire confiance</div>
             <div class="container_gauche_text-description2">Spécialiste du web reconnu, profitez d'une expértise de plus de 5 ans avec les plus grandes entreprise d'europe. Bénéficiez d'un accompagnement sur mesure pour votre transformation digitale.</div>
-            <div class="container_gauche_text-button">Découvrir les services</div>
-            
-
-
+            <div class="container_gauche_text-button">
+               <button class="button-64" role="button" (click)="navigateToMesService()"><span class="text">Découvrir les services</span></button>
+            </div>
         </div>
         <div class="container_gauche_insight">
             <div class="container_gauche_insight-ca"></div>
             <div class="container_gauche_insight-experience"></div>
         </div>
     </div>
-    <div class="container_droite">
-       <img src="./../../../assets/images/landing1.jpg" alt="" class="container_droite_image"> 
-    </div>
+    <!-- <div class="container_droite"> -->
+       <!--   -->
+    <!-- </div> -->
 </div>
+<img src="./../../../assets/images/landing1.jpg" alt="" class="arriere_plan">
 
 
 
