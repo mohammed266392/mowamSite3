@@ -1,0 +1,44 @@
+
+
+.container_mobile{
+    display: none;
+}
+
+@media screen and (max-width:500px) {
+    .container_mobile{
+        position: absolute;
+        font-size: larger;
+        background-color: var(--bg-header);
+        color: var(--color-landing-page);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 0px;
+        width: 100%;
+        overflow: hidden;
+        top: var(--largeur-header);
+        right: 0;
+        transition: all 0.6s cubic-bezier(0.35, 0.16, 1, 1);
+    }
+
+    .container_mobile.is_clicked {
+        height: 50vh;
+        width: 100%;
+        overflow :visible
+    }
+
+    .onglet{
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .onglet_name{
+        pointer-events: none;
+        text-wrap: nowrap;
+    }
+
+   
+
+}

@@ -5,14 +5,11 @@
     align-items: stretch;
     height: 100%;
     color: var(--color-writing-header);
-    text-shadow:  3px 0px 7px rgb(255 255 255 / 80%), -3px 0px 7px rgb(0 0 0 / 80%), 0px 4px 7px rgb(0 0 0 / 80%);
 }
 
 .onglet{
   font-weight: var(--weight-font-header);
   font-size: var(--size-font-header-middle);
-  /* font-weight: 400;
-  font-size: large; */
   display: flex;
   align-items: center;
   cursor: pointer;

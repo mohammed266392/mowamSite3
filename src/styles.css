@@ -1,14 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
 
-	/* Temmplate 2 */
-     --main-bg-color: rgb(255, 255, 255);
-    --main-color: #343A40;
-	--main-color2: #007994ff;
-	--main-color3: #125687ff;
+	/* Temmplate 1 */
+	--bg-header :  #ffffff ;
 	--bg-gris-doux: #F8F9FA;
-	--color-writing-header: #FFFFFF;
+	--color-writing-header: #343A40;
+	--color-second : #5cc69b ;
+	--color-bar-header :  #343A40;
+	--color-landing-page : #343A40;
 	--color-jaune-solaire: #FFC107;
+
 
 
 	--bleu-marine-rgb : 5, 6, 45;
@@ -38,6 +39,40 @@
 	couleur-kaki : #94812bff */
   }
 
+  @font-face {
+	font-family: 'Bebas Neue Pro Bold';
+	src: url('./assets/fonts/Bebas-Neue-Pro-Bold.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+  }
+  
+  @font-face {
+	font-family: 'Bebas Neue Pro Bold';
+	src: url('./assets/fonts/Bebas-Neue-Pro-Bold-Italic.otf') format('opentype');
+	font-weight: bold;
+	font-style: italic;
+  }
+  
+  @font-face {
+	font-family: 'Bebas Neue Pro Bold';
+	src: url('./assets/fonts/Bebas-Neue-Pro-Regular.otf') format('opentype');
+	font-weight: 500 ;
+	font-style: normal;
+  }
+
+  @font-face {
+	font-family: 'Bebas Neue Pro Bold';
+	src: url('./assets/fonts/Bebas-Neue-Pro-Thin.otf') format('opentype');
+	font-weight:300;
+	font-style: normal;
+  }
+
+  @font-face {
+	font-family: 'Bebas Neue Pro Bold';
+	src: url('./assets/fonts/Bebas-Neue-Pro-Thin-Italic.otf') format('opentype');
+	font-weight:300;
+	font-style: italic;
+  }
   
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -68,7 +103,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: "Roboto";
+	font-family: 'Bebas Neue Pro Bold';
+	/* font-family: "Roboto"; */
 	/* font-family: 'Work Sans', sans-serif; */
 }
 ol, ul {
