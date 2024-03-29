@@ -101,4 +101,9 @@
     .container_enbref_bloc{
         min-width: 90%;
     }
+    .container_services_item_img {
+        height: 50vh;
+        width: 75%;
+    }
+    
 }
