@@ -1,3 +1,37 @@
-.odometer{
-    margin-top: 150px;
+.container_enbref{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_enbref_title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+.container_enbref_bloc{
+    min-width: 50%;
+    display: flex;
+    justify-content:space-between ;
+    margin: auto;
+}
+.container_enbref_bloc_item{
+    width: 33%;
+}
+.container_enbref_bloc_item_chiffre{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+}
+.container_enbref_bloc_item_description{
+    text-align: center;
+    width: 100%;
+}
+
+
+@media screen and (max-width:500px) {
+    .container_enbref_bloc{
+        min-width: 90%;
+    }
 }

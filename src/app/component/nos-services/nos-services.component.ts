@@ -11,8 +11,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class NosServicesComponent implements OnInit, OnDestroy{
   valeur: number = 0;
+  statisfactionValue: number = 0;
   private intervalId: any;
+  private intervalId1: any;
   private delay: number = 50; // Délai initial rapide
+  private delaySatisfaction: number = 20; // Délai initial rapide
 
   ngOnInit() {
     this.startCounter();
@@ -24,19 +27,22 @@ export class NosServicesComponent implements OnInit, OnDestroy{
 
   private startCounter() {
     this.updateCounter();
+    this.updateCounterSatisfaction();
   }
+  // 2,1.25,,1.1
 
   private updateCounter() {
+
     this.intervalId = setInterval(() => {
       if (this.valeur < 50) {
         this.valeur++;
         // Ajuste le délai à mesure que la valeur augmente
         if (this.valeur === 25) {
-          this.delay = 100; // Devient plus lent après 25
+          this.delay = 50; // Devient plus lent après 25
         } else if (this.valeur === 40) {
-          this.delay = 200; // Devient encore plus lent après 40
+          this.delay = 100; // Devient encore plus lent après 40
         } else if (this.valeur === 45) {
-          this.delay = 300; // Devient encore plus lent après 40
+          this.delay = 150; // Devient encore plus lent après 40
         }
         // Réinitialise l'intervalle avec le nouveau délai
         this.clearCounterInterval();
@@ -46,13 +52,43 @@ export class NosServicesComponent implements OnInit, OnDestroy{
       }
     }, this.delay);
   }
+  private updateCounterSatisfaction() {
+    this.intervalId1 = setInterval(() => {
+      if (this.statisfactionValue < 100) {
+        this.statisfactionValue++;
+        // Ajuste le délai à mesure que la valeur augmente
+        if (this.statisfactionValue === 75) {
+          this.delaySatisfaction = 100; // Devient plus lent après 25
+        } else if (this.statisfactionValue === 85) {
+          this.delaySatisfaction = 200; // Devient encore plus lent après 40
+        } else if (this.statisfactionValue === 95) {
+          this.delaySatisfaction = 300; // Devient encore plus lent après 40
+        }
+        // Réinitialise l'intervalle avec le nouveau délai
+        this.clearCounterIntervalSatisfaction();
+        this.updateCounterSatisfaction();
+      } else {
+        this.clearCounterIntervalSatisfaction();
+      }
+    }, this.delaySatisfaction);
+
+  }
 
   private clearCounterInterval() {
     if (this.intervalId) {
       clearInterval(this.intervalId);
       this.intervalId = null;
     }
+    
   }
+  
+  private clearCounterIntervalSatisfaction() {
+    if (this.intervalId1) {
+      clearInterval(this.intervalId1);
+      this.intervalId1 = null;
+    }
+  }
+
 
 }
 
