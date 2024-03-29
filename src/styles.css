@@ -6,11 +6,12 @@
 	--bg-gris-doux: #F8F9FA;
 	--color-writing-header: #343A40;
 	--color-second : #4c94a4 ;
+	--mat-icon-color : #ffffff;
 	--color-third: #9a8443;
 	--color-bar-header :  #343A40;
 	--color-landing-page : #343A40;
 
-
+	--color-second-rgb:76, 148, 164;
 
 
 	--bleu-marine-rgb : 5, 6, 45;
@@ -125,3 +126,6 @@ table {
 	border-spacing: 0;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
