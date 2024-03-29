@@ -108,3 +108,12 @@ export class ObjectService{
         this.buttonIsPresent = value
     }
 }
+
+
+export class ItemService{
+    constructor( 
+        public id : number,
+        public title : string,
+        public subtitle : string,
+        public description : string){}
+}

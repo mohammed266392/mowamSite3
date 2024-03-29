@@ -1,10 +1,11 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ItemService } from '../../models/object';
 
 @Component({
   selector: 'app-nos-services',
   standalone: true,
-  imports: [NgClass  ],
+  imports: [NgClass, NgFor],
   providers:[],
   templateUrl: './nos-services.component.html',
   styleUrl: './nos-services.component.css'
@@ -16,9 +17,15 @@ export class NosServicesComponent implements OnInit, OnDestroy{
   private intervalId1: any;
   private delay: number = 50; // Délai initial rapide
   private delaySatisfaction: number = 20; // Délai initial rapide
+  items : ItemService[] = []
 
   ngOnInit() {
     this.startCounter();
+    this.items = [
+      new ItemService(0,"Site vitrine", "Votre Portail vers le Succès en Ligne", "Dans le monde numérique d'aujourd'hui, une présence en ligne n'est pas seulement un avantage, mais une nécessité. Notre service de création de \"Site Vitrine\" est conçu pour propulser votre entreprise sur le devant de la scène digitale, offrant une représentation élégante, professionnelle et sur-mesure de votre marque sur internet."),
+      new ItemService(0,"Site vitrine", "Votre Portail vers le Succès en Ligne", "Dans le monde numérique d'aujourd'hui, une présence en ligne n'est pas seulement un avantage, mais une nécessité. Notre service de création de \"Site Vitrine\" est conçu pour propulser votre entreprise sur le devant de la scène digitale, offrant une représentation élégante, professionnelle et sur-mesure de votre marque sur internet."),
+      new ItemService(0,"Site vitrine", "Votre Portail vers le Succès en Ligne", "Dans le monde numérique d'aujourd'hui, une présence en ligne n'est pas seulement un avantage, mais une nécessité. Notre service de création de \"Site Vitrine\" est conçu pour propulser votre entreprise sur le devant de la scène digitale, offrant une représentation élégante, professionnelle et sur-mesure de votre marque sur internet.")
+    ]
   }
 
   ngOnDestroy() {
