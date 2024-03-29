@@ -98,7 +98,7 @@
     text-align: center;
 }
 .container_services_item_bloc_subtitle{
-
+    color: var(--color-third);
     text-align: center;
     font-size: 30px;
 }
@@ -110,7 +110,12 @@
         height: 50vh;
         width: 75%;
     }
-    
+    .container_services_item_bloc_title{
+        font-size: 30px;
+    }
+    .container_services_item_bloc_subtitle{
+        font-size: 13px;
+    }
 
     .container_services_item_bloc{
         padding-top: 10px;
