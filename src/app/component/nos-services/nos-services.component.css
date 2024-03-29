@@ -1,6 +1,7 @@
 .container_enbref{
     display: flex;
     flex-direction: column;
+    margin-bottom: 70px;
 }
 
 .container_enbref_title{
@@ -28,6 +29,29 @@
     text-align: center;
     width: 100%;
 }
+
+.container_services_item{
+    position: relative;
+}
+.container_services_item_img{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 70vh;
+    width: 40%;
+}
+.container_services_item{
+    height: 70vh;
+    width: 100%;
+    background-color: beige;
+    z-index: -2;
+}
+.container_services_item_bloc{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+}
+
 
 
 @media screen and (max-width:500px) {
