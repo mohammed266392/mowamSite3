@@ -1,0 +1,7 @@
+.container{
+    position: fixed;
+    bottom: 0px;
+    height: var(--largeur-footer);
+    width: 100%;
+    background-color: var(--color-third);
+}
