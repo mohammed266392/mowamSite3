@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './component/header/header.component';
 import { Header2Component } from './component/header2/header2.component';
+import { OngletService } from './services/onglet.service';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,5 @@ import { Header2Component } from './component/header2/header2.component';
 })
 export class AppComponent {
   title = 'mowamSite3';
+  ongletService = inject(OngletService)
 }

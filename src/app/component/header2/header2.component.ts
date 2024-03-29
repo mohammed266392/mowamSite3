@@ -4,6 +4,7 @@ import { NgClass } from '@angular/common';
 import { OngletsPlusMobileComponent } from '../tools/ongletsplus-mobile/ongletsplus-mobile.component';
 import { Onglet } from '../../models/object';
 import { OngletsplusMobile2Component } from '../tools/ongletsplus-mobile2/ongletsplus-mobile2.component';
+import { OngletService } from '../../services/onglet.service';
 
 @Component({
   selector: 'app-header2',
@@ -22,6 +23,17 @@ export class Header2Component {
   title : string = "MOWAM Solution"
   logo : string = "./../../assets/images/logo_solution_piscine.svg"
   menuBurgerIsClicked : boolean = false
+
+  constructor(private ongletService: OngletService) {
+
+    this.ongletService.ongletsSontCaches$.subscribe((value) => {
+      if (value) {
+        // Mettez à jour votre objet Onglet ici
+        this.onglets.forEach( ongletInstance => ongletInstance.setSousOngletsIsOpen(false) );
+        this.menuBurgerIsClicked = false
+      }
+    });
+  }
 
   clickHeader() : void {
     this.menuBurgerIsClicked = !this.menuBurgerIsClicked

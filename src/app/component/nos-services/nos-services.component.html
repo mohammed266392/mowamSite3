@@ -19,7 +19,7 @@
 
   <div class="container_services">
     <div [ngClass]="{'container_services_item':true,'change_sense': i % 2 === 0 }"  *ngFor="let item of items; let i = index">
-      <img [ngClass]="{'container_services_item_img':true, 'change_sense': i % 2 === 0}" src="./../../../assets/images/site-vitrine.jpg" alt="">
+      <img [ngClass]="{'container_services_item_img':true, 'change_sense': i % 2 === 0}" [src]="item.url" alt="">
       <div class="container_services_item_bloc">
         <div class="container_services_item_bloc_title">{{item.title}}</div>
         <div class="container_services_item_bloc_subtitle">{{item.subtitle}}</div>

@@ -2,6 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { OngletService } from '../../services/onglet.service';
 
 @Component({
   selector: 'app-landing4',
@@ -13,6 +14,7 @@ import { BehaviorSubject } from 'rxjs';
 export class Landing4Component {
 
   router = inject(Router);
+  ongletService = inject(OngletService)
 
  // Texte initial
   test = 'TEST1'; // Texte initial
@@ -30,6 +32,7 @@ export class Landing4Component {
     setInterval(() => {
       this.cycleActions()
     },5500)
+    this.ongletService.cacherLesOnglets()
   }
 
   cycleActions() : void {

@@ -115,5 +115,6 @@ export class ItemService{
         public id : number,
         public title : string,
         public subtitle : string,
-        public description : string){}
+        public description : string,
+        public url : string){}
 }
