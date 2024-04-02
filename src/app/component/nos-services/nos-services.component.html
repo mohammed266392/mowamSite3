@@ -19,7 +19,7 @@
 
   <div class="container_services">
     <div [ngClass]="{'container_services_item':true,'change_sense': i % 2 === 0 }"  *ngFor="let item of items; let i = index">
-      <img [ngClass]="{'container_services_item_img':true, 'change_sense': i % 2 === 0}" [src]="item.url" alt="">
+      <img [ngClass]="{'container_services_item_img':true, 'change_sense': i % 2 === 0}" [src]="item.urlPhoto" alt="">
       <div class="container_services_item_bloc">
         <div class="container_services_item_bloc_title">{{item.title}}</div>
         <div class="container_services_item_bloc_subtitle">{{item.subtitle}}</div>
@@ -28,13 +28,8 @@
             {{item.description}}
           </div>
         </div>
-        <div class="container_services_item_bloc_button">
-          <!-- <div class="container_services_item_bloc_button_en-savoir-plus">
-            <button>savoir plus</button>
-          </div> -->
-          <!-- HTML !-->
+        <div class="container_services_item_bloc_button" (click)="navigate(item.linkEnsavoirPlus)">
           <button class="button-29" role="button">savoir plus</button>
-
         </div>
       </div>
     </div>

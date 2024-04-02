@@ -116,5 +116,11 @@ export class ItemService{
         public title : string,
         public subtitle : string,
         public description : string,
-        public url : string){}
+        public urlPhoto : string,
+        public linkEnsavoirPlus : string){}
+}
+
+export interface Phrase {
+    firstPhrase: string;
+    secondPhrase: string;
 }

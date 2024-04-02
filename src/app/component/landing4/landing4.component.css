@@ -38,6 +38,7 @@
 }
 .container_gauche_text-description{
     font-size: xx-large;
+    color: var(--color-second);
 }
 .container_gauche_text-description2{
     margin: auto;

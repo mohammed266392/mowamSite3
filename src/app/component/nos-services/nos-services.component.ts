@@ -2,6 +2,7 @@ import { NgClass, NgFor } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ItemService } from '../../models/object';
 import { OngletService } from '../../services/onglet.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nos-services',
@@ -20,14 +21,15 @@ export class NosServicesComponent implements OnInit, OnDestroy{
   private delaySatisfaction: number = 20; // Délai initial rapide
   items : ItemService[] = [];
   ongletService = inject(OngletService)
+  router = inject(Router)
 
   ngOnInit() {
     this.startCounter();
     this.items = [
-      new ItemService(0,"Site vitrine", "Votre Portail vers le Succès en Ligne", "Dans le monde numérique d'aujourd'hui, une présence en ligne n'est pas seulement un avantage, mais une nécessité. Notre service de création de \"Site Vitrine\" est conçu pour propulser votre entreprise sur le devant de la scène digitale, offrant une représentation élégante, professionnelle et sur-mesure de votre marque sur internet.","./../../../assets/images/site-vitrine.jpg"),
-      new ItemService(1,"Application Web", "Des Solutions Web Sur-Mesure", "À l'ère du numérique, une application web performante est cruciale pour se démarquer dans le marché saturé d'aujourd'hui. Notre service de développement d'application web offre des solutions complètes, personnalisées et évolutives pour répondre aux défis uniques de votre entreprise. Transformez votre idée en une application web innovante et convaincante qui engage vos clients et stimule votre croissance.","./../../../assets/images/application-web.jpg"),
-      new ItemService(2,"Site e-commerce", "Transformez Vos Visiteurs en Clients Fidèles", "Dans un marché en ligne en constante évolution, la création d'un site e-commerce qui se démarque est essentielle pour capter l'attention des consommateurs et convertir leur intérêt en ventes. Notre service de création de site e-commerce offre des solutions sur-mesure qui allient esthétique, fonctionnalité et performance pour garantir une expérience d'achat en ligne exceptionnelle.","./../../../assets/images/e-commerce.jpg"),
-      new ItemService(2,"Marketing", "Amplifiez Votre Visibilité avec Google Ads et Facebook Ads ...", "Dans l'univers concurrentiel actuel, une stratégie de marketing numérique ciblée et efficace est indispensable pour se démarquer et atteindre votre public cible. Notre service de marketing se spécialise dans l'exploitation de la puissance de Google Ads et Facebook Ads pour propulser votre marque au devant de la scène digitale, en connectant vos produits ou services avec les consommateurs intéressés.","./../../../assets/images/marketing.jpg")
+      new ItemService(0,"Site vitrine", "Votre Portail vers le Succès en Ligne", "Dans le monde numérique d'aujourd'hui, une présence en ligne n'est pas seulement un avantage, mais une nécessité. Notre service de création de \"Site Vitrine\" est conçu pour propulser votre entreprise sur le devant de la scène digitale, offrant une représentation élégante, professionnelle et sur-mesure de votre marque sur internet.","./../../../assets/images/site-vitrine.jpg","site-vitrine"),
+      new ItemService(1,"Application Web", "Des Solutions Web Sur-Mesure", "À l'ère du numérique, une application web performante est cruciale pour se démarquer dans le marché saturé d'aujourd'hui. Notre service de développement d'application web offre des solutions complètes, personnalisées et évolutives pour répondre aux défis uniques de votre entreprise. Transformez votre idée en une application web innovante et convaincante qui engage vos clients et stimule votre croissance.","./../../../assets/images/application-web.jpg","site-vitrine"),
+      new ItemService(2,"Site e-commerce", "Transformez Vos Visiteurs en Clients Fidèles", "Dans un marché en ligne en constante évolution, la création d'un site e-commerce qui se démarque est essentielle pour capter l'attention des consommateurs et convertir leur intérêt en ventes. Notre service de création de site e-commerce offre des solutions sur-mesure qui allient esthétique, fonctionnalité et performance pour garantir une expérience d'achat en ligne exceptionnelle.","./../../../assets/images/e-commerce.jpg","site-vitrine"),
+      new ItemService(2,"Marketing", "Amplifiez Votre Visibilité avec Google Ads et Facebook Ads ...", "Dans l'univers concurrentiel actuel, une stratégie de marketing numérique ciblée et efficace est indispensable pour se démarquer et atteindre votre public cible. Notre service de marketing se spécialise dans l'exploitation de la puissance de Google Ads et Facebook Ads pour propulser votre marque au devant de la scène digitale, en connectant vos produits ou services avec les consommateurs intéressés.","./../../../assets/images/marketing.jpg","site-vitrine")
     ]
     this.ongletService.cacherLesOnglets();
   }
@@ -98,6 +100,10 @@ export class NosServicesComponent implements OnInit, OnDestroy{
       clearInterval(this.intervalId1);
       this.intervalId1 = null;
     }
+  }
+
+  navigate(linkEnsavoirPlus : string){
+    this.router.navigateByUrl(linkEnsavoirPlus)
   }
 
 

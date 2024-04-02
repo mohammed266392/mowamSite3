@@ -52,7 +52,6 @@
     position: relative;
     height: 70vh;
     width: 100%;
-    z-index: -2;
     display: flex;
     justify-content: flex-end;
 }
