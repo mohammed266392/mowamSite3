@@ -1,1 +1,23 @@
-<p>{{title}}</p>
+<div class="container">
+    <img class="container_img" src="./../../../assets/images/marketing.jpg" alt="">
+    <div class="container_bloc">
+        <div class="container_bloc_title">
+            <p>{{title}}</p>
+        </div>
+        <div class="container_bloc_subtitle">
+            <p>{{subtitle}}</p>
+        </div>
+        <div class="container_bloc_items">
+            <div [ngClass]="{'container_bloc_item' : true, 'change_sense': i % 2 === 1 }"  *ngFor="let phrase of phrases; let i = index">
+                <div class="container_bloc_item_bloc">
+                    <span class="bar-middle"></span>
+                    <div class="container_bloc_item_index">{{i+1}}</div>
+                    <p class="container_bloc_item_first-phrase">{{phrase.firstPhrase}}</p>
+                    <p class="container_bloc_item_second-phrase">{{phrase.secondPhrase}}</p>
+              
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

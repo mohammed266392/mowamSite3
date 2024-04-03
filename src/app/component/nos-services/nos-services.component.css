@@ -63,6 +63,7 @@
 
 .container_services_item_img{
     position: absolute;
+    object-fit: cover;
     z-index: -1;
     top: 0%;
     left: 0%;

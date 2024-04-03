@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Phrase } from '../../models/object';
+import { NosServicesDetailsComponent } from '../nos-services-details/nos-services-details.component';
 
 @Component({
   selector: 'app-marketing',
   standalone: true,
-  imports: [],
+  imports: [NosServicesDetailsComponent],
   templateUrl: './marketing.component.html',
   styleUrl: './marketing.component.css'
 })

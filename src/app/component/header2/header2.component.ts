@@ -17,7 +17,7 @@ export class Header2Component {
   onglets : Onglet[] = [
     new Onglet(0,'Home','home',[]),
     new Onglet(1,'Nos Services','nos-services',[]),
-    new Onglet(2,'Contact','contact',[])
+    new Onglet(2,'A propos','a-propos',[])
   
   ]
   title : string = "MOWAM Solution"
