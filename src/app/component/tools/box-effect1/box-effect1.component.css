@@ -68,7 +68,10 @@
 
 
 @media screen and (max-width:700px) {
-    
+    .container_bloc_item_bloc.gap-right{
+        margin: auto;
+    }
+
     .container_bloc_item_bloc{
         margin: auto;
         width: 80%;
