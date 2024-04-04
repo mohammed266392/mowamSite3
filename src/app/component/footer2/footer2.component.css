@@ -7,8 +7,6 @@
     height: var(--largeur-footer);
     width: 100%;
     background-color: rgba( var(--color-second-rgb), 0.7);
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 .container_item{
