@@ -8,15 +8,28 @@
             <p>{{subtitle}}</p>
         </div>
         <div class="container_bloc_items">
-            <div [ngClass]="{'container_bloc_item' : true, 'change_sense': i % 2 === 1 }"  *ngFor="let phrase of phrases; let i = index">
-                <div class="container_bloc_item_bloc">
+             <div [ngClass]="{'container_bloc_item' : true}"  *ngFor="let phrase of phrases; let i = index">
+                
+                <app-box-effect1
+                [index]=i
+                [changeSense]="i % 2 === 1"
+                [firstPhrase]="phrase.firstPhrase"
+                [secondPhrase]="phrase.secondPhrase"
+                >
+
+                </app-box-effect1> 
+            <!--    <div [ngClass]="{'container_bloc_item_bloc':true, 'change_sense': i % 2 === 1  }">
                     <span class="bar-middle"></span>
-                    <div class="container_bloc_item_index">{{i+1}}</div>
-                    <p class="container_bloc_item_first-phrase">{{phrase.firstPhrase}}</p>
-                    <p class="container_bloc_item_second-phrase">{{phrase.secondPhrase}}</p>
+                    <div class="container_bloc_item_index">
+                        <div class="container_bloc_item_index_content">
+                            {{i+1}}
+                        </div> 
+                    </div>
+                    <p class="container_bloc_item_title">{{phrase.firstPhrase}}</p>
+                    <p class="container_bloc_item_description">{{phrase.secondPhrase}}</p>
               
-                </div>
-            </div>
+                </div>-->
+            </div> 
         </div>
     </div>
 </div>

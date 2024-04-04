@@ -11,7 +11,7 @@ import { NosServicesDetailsComponent } from '../nos-services-details/nos-service
 })
 export class ECommerceComponent {
   title : string = "Site E-commerce"
-  subtitle : string = "Pourquoi choisir notre service de Création de Site E-commerce ?"
+  subtitle : string = "Pourquoi choisir notre service de création de site e-commerce ?"
   phrases: Phrase[] = [
     {
       firstPhrase: "Design Attrayant et Personnalisé",

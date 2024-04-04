@@ -11,7 +11,7 @@ import { NosServicesDetailsComponent } from '../nos-services-details/nos-service
 })
 export class ApplicationWebComponent {
   title : string = "Application Web"
-  subtitle : string = "Pourquoi choisir notre service d'Application Web ?"
+  subtitle : string = "Pourquoi choisir notre service d'application web ?"
   phrases: Phrase[] = [
     {
       firstPhrase: "Personnalisation Avancée",

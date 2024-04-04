@@ -12,7 +12,7 @@ import { Phrase } from '../../models/object';
 export class SiteVitrineComponent {
 
   title : string = "Site Vitrine"
-  subtitle : string = "Pourquoi choisir notre service de Site Vitrine ?"
+  subtitle : string = "Pourquoi choisir notre service de site vitrine ?"
   phrases: Phrase[] = [
     {
       firstPhrase: "Première Impression Mémorable",

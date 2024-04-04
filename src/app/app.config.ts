@@ -14,6 +14,8 @@ const inMemoryScrollingFeature: InMemoryScrollingFeature =
 
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, inMemoryScrollingFeature),
-     provideAnimationsAsync()]
+  providers: [provideRouter(routes, inMemoryScrollingFeature)
+    // ,
+    //  provideAnimationsAsync()
+    ]
 };

@@ -11,7 +11,7 @@ import { NosServicesDetailsComponent } from '../nos-services-details/nos-service
 })
 export class MarketingComponent {
   title : string = "Site E-commerce"
-  subtitle : string = "Pourquoi choisir notre service de Marketing avec Google Ads et Facebook Ads ?"
+  subtitle : string = "Pourquoi choisir notre service de marketing ?"
   phrases: Phrase[] = [
     {
       firstPhrase: "Stratégies Personnalisées",
