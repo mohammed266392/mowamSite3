@@ -22,7 +22,7 @@
     align-items: center;
     width: 100%;
     z-index: 1;
-    height: calc(100vh - var(--largeur-header));
+    height: calc(100vh - var(--largeur-header)  - var(--largeur-footer));
     display: flex;
     justify-content: center;
 }
