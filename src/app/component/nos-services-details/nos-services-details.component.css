@@ -29,6 +29,7 @@
     display: flex;
     font-size: 30px;
     color: var(--color-second);
+    text-align: center;
 }
 .container_bloc_items{
     margin-top: 40px;
