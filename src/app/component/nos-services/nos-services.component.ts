@@ -2,7 +2,8 @@ import { NgClass, NgFor } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ItemService } from '../../models/object';
 import { OngletService } from '../../services/onglet.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-nos-services',

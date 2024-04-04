@@ -9,7 +9,7 @@
 .overlay{
     position: absolute;
     width: 100%;
-    height: calc(100vh - var(--largeur-header));
+    height: calc(100vh - var(--largeur-header)  - var(--largeur-footer));
     background-color: #ffffffb8;
     z-index: 0;
 }
