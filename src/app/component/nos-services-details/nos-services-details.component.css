@@ -33,6 +33,7 @@
 }
 .container_bloc_items{
     margin-top: 40px;
+    overflow: hidden;
 }
 
  /*
