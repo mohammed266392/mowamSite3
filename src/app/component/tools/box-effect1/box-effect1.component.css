@@ -80,4 +80,7 @@
     .bar-middle{
         display: none;
     }
+    .container_bloc_item_description{
+        width: 90%;
+    }
 }
