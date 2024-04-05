@@ -152,4 +152,9 @@
 .header_droite_mobile.is_clicked .bar_milieu_container_droite{
     flex-basis: 50%;
 }
+
+.header_gauche_titre{
+  font-size: unset;
+}
+
 }

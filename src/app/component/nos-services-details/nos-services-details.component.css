@@ -22,6 +22,7 @@
     transform: translateY(-60%);
     background-color: white;
     color: var(--color-landing-page);
+    text-align: center;
 }
 
 

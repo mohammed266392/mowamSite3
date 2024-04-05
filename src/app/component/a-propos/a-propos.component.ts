@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { OngletService } from '../../services/onglet.service';
 
 @Component({
   selector: 'app-a-propos',
@@ -8,8 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './a-propos.component.css'
 })
 export class AProposComponent {
+  ongletService = inject(OngletService)
 
-  title : string = "Derrière le Code : L'Artisan de Votre Espace Web";
-  subtitle : string = "Plongez dans l'univers de Mohammed-yassine, un parcours semé d'expériences chez Sopra Steria, Yves Rocher, Michelin, et une passion pour façonner le web de demain."
+  constructor(){
+    this.ongletService.cacherLesOnglets()
+  }
 
 }

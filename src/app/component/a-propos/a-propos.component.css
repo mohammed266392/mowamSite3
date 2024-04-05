@@ -68,6 +68,29 @@
     animation: trait 2s cubic-bezier(1, 0.01, 0.64, 0.55) forwards;
 }
 
+.container_a_propos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #7a7a7a;
+    font-family: cursive;
+}
+
+.container_second{
+    display: flex;
+}
+
+.image-about{
+    width: 30%;
+    object-fit: cover;
+}
+
 @keyframes trait {
     from{
         width: 0%;
@@ -84,6 +107,9 @@
 }
 
 @media screen and (max-width:500px) {
+    .image-about{
+        display: none;
+    }
 
     .container_main_block1{
        width: 90%;
@@ -92,6 +118,9 @@
     .container_main_block1--title{
         font-size: x-large;
         text-wrap: wrap;
+    }
+    .container_a_propos{
+        width: 90%;
     }
 
 }
