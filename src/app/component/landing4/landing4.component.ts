@@ -1,7 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 import { OngletService } from '../../services/onglet.service';
 
 @Component({
@@ -25,13 +24,12 @@ export class Landing4Component {
   currentIndex1 = 0;
   hide : boolean = false ;
   displaySeconde = 0;
-  // private intervalId: any;
 
   constructor() { 
     this.cycleActions()
     setInterval(() => {
       this.cycleActions()
-    },5500)
+    },3500)
     this.ongletService.cacherLesOnglets()
   }
 
@@ -39,7 +37,7 @@ export class Landing4Component {
     // Première action : masquer après 4500 ms
     setTimeout(() => {
       this.hide = true;
-    }, 4500);
+    }, 500);
   
     // Deuxième action : changer l'index après 5000 ms
     setTimeout(() => {
@@ -48,51 +46,17 @@ export class Landing4Component {
         this.currentIndex = 0;
       }
       this.text = this.texts[this.currentIndex];
-    }, 5000);
+    }, 1000);
   
     // Troisième action : afficher après 5500 ms
     setTimeout(() => {
       this.hide = false;
-    }, 5500);
+    }, 1500);
 
   }
 
   navigateToMesService(){
     this.router.navigateByUrl("/nos-services")
   }
-
-
-
-
-
-
-  //   setInterval(() => {
-  //     // console.log("hide1 : ",this.hide)
-  //     // this.hide = true;
-  //     // console.log("hide2 : ",this.hide)
-  //     this.currentIndex = this.currentIndex + 1 ;
-  //     if(this.currentIndex == this.texts.length){
-  //       this.currentIndex = 0;
-  //     }
-  //     setInterval(() => {
-  //       this.hide = false;
-  //       console.log("hide3 : ",this.hide)
-  //     },500);
-
-  //     setInterval(() => {
-  //       this.text = this.texts[this.currentIndex];
-
-  //     },1000);
-
-  //   }, 5000); 
-  //   // setInterval(() => {
-  //   //   this.activateEffect.next(true)
-  //   //   console.log("affiche la valeur activateEffect: ",this.activateEffect)
-  //   // }, 2500); 
-  // }
-
-  // function name(params:type) {
-    
-  
 
 }
