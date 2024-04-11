@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { OngletsPlusComponent } from '../tools/ongletsplus/ongletsplus.component';
 import { NgClass } from '@angular/common';
 import { OngletsPlusMobileComponent } from '../tools/ongletsplus-mobile/ongletsplus-mobile.component';
 import { Onglet } from '../../models/object';
 import { OngletsplusMobile2Component } from '../tools/ongletsplus-mobile2/ongletsplus-mobile2.component';
 import { OngletService } from '../../services/onglet.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header2',
@@ -14,6 +15,9 @@ import { OngletService } from '../../services/onglet.service';
   styleUrl: './header2.component.css'
 })
 export class Header2Component {
+
+  router = inject(Router)
+
   onglets : Onglet[] = [
     new Onglet(0,'Home','home',[]),
     new Onglet(1,'Nos Services','nos-services',[]),
@@ -37,6 +41,10 @@ export class Header2Component {
 
   clickHeader() : void {
     this.menuBurgerIsClicked = !this.menuBurgerIsClicked
+  }
+
+  navigateConnection() : void {
+    this.router.navigateByUrl("/sign-up")
   }
 
 }

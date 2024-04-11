@@ -1,0 +1,106 @@
+.container{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_box{
+    border: 1px solid black;
+    height: 70%;
+    width: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container_box_slider{
+    height: 80%;
+    background-color: rgba( var(--main-color2-rgba) , 0.26);
+    width: 200%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    transition: left 1s ease;
+}
+
+.container_box_slider--register, .container_box_slider--login{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.formulaire{
+    width: 95%;
+    height: 100%;
+}
+
+.formulaire_box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container_box_slider.login{
+    left: -100%;
+}
+
+.formulaire_box_component{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.formulaire_box_component_input--input{
+    outline: none;
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+
+.formulaire_box_component_input--border{
+    height: 1px;
+    border-bottom: 1px solid rgb(88, 88, 88);
+}
+
+.container_box_choice{
+    position: absolute;
+    top: 80%;
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+    width: 100%;
+
+}
+
+.container_box_register, .container_box_login{
+    cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_box_choice--background{
+    position: absolute;
+    top: 80%;
+    left: 0%;
+    height: 20%;
+    width: 50%;
+    background-color:  rgba( var(--main-color2-rgba) , 0.26);
+    z-index: -1;
+    transition: left 1s ease;
+}
+.container_box_choice--background.login{
+    left: 50%;
+}
+.invalid-feedback{
+    color: red;
+    font-size: small;
+}
+
+span{
+    font-weight: bold;
+}

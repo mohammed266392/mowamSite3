@@ -6,6 +6,7 @@ import { ApplicationWebComponent } from './component/application-web/application
 import { ECommerceComponent } from './component/e-commerce/e-commerce.component';
 import { MarketingComponent } from './component/marketing/marketing.component';
 import { AProposComponent } from './component/a-propos/a-propos.component';
+import { SignUpComponent } from './component/sign-up/sign-up.component';
 
 export const routes: Routes = [
     
@@ -17,5 +18,7 @@ export const routes: Routes = [
     { path: 'e-commerce', component: ECommerceComponent },
     { path: 'marketing', component: MarketingComponent },
     { path: 'a-propos', component: AProposComponent },
+    { path: 'sign-up', component: SignUpComponent }
+
 // autres routes...
 ];

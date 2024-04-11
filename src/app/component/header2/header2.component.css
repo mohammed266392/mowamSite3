@@ -63,6 +63,7 @@
 .header_droite_container_svg{
   height: 23px;
   width: 23px;
+  cursor: pointer;
 }
 
 .header_droite_container_svg_circle, .header_droite_container_svg_demi-circle{
