@@ -24,7 +24,8 @@
     .container_mobile.is_clicked {
         height: 50vh;
         width: 100%;
-        overflow :visible
+        overflow :visible;
+        border: 1px solid var(--color-third);
     }
 
     .onglet{

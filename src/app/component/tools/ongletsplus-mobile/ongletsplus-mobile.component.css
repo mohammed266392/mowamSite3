@@ -23,7 +23,7 @@
 
     .container_mobile.is_clicked {
         height: 50vh;
-        overflow :visible
+        overflow :visible;
     }
 
     .onglet{
