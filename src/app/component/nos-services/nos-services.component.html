@@ -20,7 +20,10 @@
   <div class="container_services">
     <div [ngClass]="{'container_services_item':true,'change_sense': i % 2 === 0 }"  *ngFor="let item of items; let i = index">
       <img [ngClass]="{'container_services_item_img':true, 'change_sense': i % 2 === 0}" [src]="item.urlPhoto" alt="">
-      <div class="container_services_item_bloc">
+      <img [ngClass]="{'test': true, 'change_sense': i % 2 === 1, 'svg_normal': true}" src="./../../../assets/images/dessin-1-desktop.svg" alt="">
+      <img [ngClass]="{'test': true, 'change_sense': i % 2 === 1, 'svg_mobile': true}" src="./../../../assets/images/dessin-2-mobile-contour3.svg" alt="">
+      <img [ngClass]="{'test': true, 'change_sense': i % 2 === 1, 'svg_mobile_thin': true}" src="./../../../assets/images/dessin-3-mobile-thin.svg" alt="">
+      <div [ngClass]="{'container_services_item_bloc' : true}">
         <div class="container_services_item_bloc_title">{{item.title}}</div>
         <div class="container_services_item_bloc_subtitle">{{item.subtitle}}</div>
         <div class="container_services_item_bloc_description">

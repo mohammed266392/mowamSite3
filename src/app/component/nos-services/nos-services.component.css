@@ -44,10 +44,6 @@
     gap: 40px;
 }
 
-.container_services_item_bloc_description_content{
-    text-align: justify;
-}
-
 .container_services_item{
     position: relative;
     height: 70vh;
@@ -85,12 +81,32 @@
     justify-content: center;
     gap: 10px;
     width: 65%;
-    background-color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    border: 1px solid var(--color-third);
+    /* background-color: white; */
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
+    /* border: 1px solid var(--color-third); */
+    /* background-image: url('./../../../assets/images/dessin-1-rogner.svg');
+    background-size: cover;  */
+    /* border: 20px solid transparent;
+    border-image: url('./../../../assets/images/dessin-1-rogner-fondblanc.svg') 10 stretch;
+    padding: 20px; */
+
 }
+.test{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    height: 100%;
+    width: 70%;
+    z-index: -1;
+}
+.test.change_sense{
+    left: initial;
+    right: 0%;
+}
+
 
 .container_services_item_bloc_title{
     color: var(--color-second);
@@ -100,6 +116,14 @@
     font-weight: 600;
     text-align: center;
 }
+.container_services_item_bloc_description_content{
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    width: 75%;
+    margin: auto;
+    text-align: justify;
+}
+
 .container_services_item_bloc_subtitle{
     color: var(--color-third);
     text-align: center;
@@ -154,8 +178,43 @@ transform: translateY(-2px);
 box-shadow: var(--color-second) 0 3px 7px inset;
 transform: translateY(2px);
 }
+.svg_mobile{
+    display: none;
+}
+.svg_mobile_thin{
+    display: none;
+}
+
+@media screen and (max-width:800px) {
+    .svg_normal{
+        display: none;
+    }
+    .svg_mobile{
+        display: block;
+    }
+    .svg_mobile_thin{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    .svg_normal{
+        display: none;
+    }
+    .svg_mobile{
+        display: none;
+    }
+    .svg_mobile_thin{
+        display: block;
+    }
+
+}
+
+
 
 @media screen and (max-width:500px) {
+
     .container_enbref_bloc{
         min-width: 90%;
     }
@@ -167,7 +226,9 @@ transform: translateY(2px);
         font-size: 30px;
     }
     .container_services_item_bloc_subtitle{
-        font-size: 13px;
+        font-size: 17px;
+        width: 80%;
+        margin: auto;
     }
 
     .container_services_item_bloc{
@@ -175,6 +236,11 @@ transform: translateY(2px);
         padding-bottom: 10px;
         height: unset;
     }
+
+    /* .container_services_item_bloc_description{
+        width: 80%;
+        margin: auto;
+    } */
 /* candidature.aura@m2iformation.fr */
 }
 
