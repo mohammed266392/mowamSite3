@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mowam-solutions.com/sitemap.xml
