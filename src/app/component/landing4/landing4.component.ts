@@ -3,10 +3,12 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { OngletService } from '../../services/onglet.service';
 
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-landing4',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, MatButtonModule],
   templateUrl: './landing4.component.html',
   styleUrl: './landing4.component.css'
 })

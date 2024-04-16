@@ -10,13 +10,9 @@ import { Onglet, SousOnglet } from '../../../models/object';
     standalone: true,
     imports: [NgClass, NgFor]
 })
-export class OngletsPlusComponent implements OnInit {
+export class OngletsPlusComponent {
   @Input() onglets: Onglet[] = [];
   constructor(private router: Router) { }
-
-  ngOnInit(): void {
-    console.log("mes onglets",this.onglets)
-  }
 
   navigateTo(onglet : Onglet): void{
     if(onglet.getSousOnglets().length == 0){

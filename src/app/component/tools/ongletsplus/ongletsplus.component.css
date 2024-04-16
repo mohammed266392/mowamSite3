@@ -50,7 +50,9 @@
   font-weight: bolder;
 
 }
-
+.onglet_item{
+  font-size: 25px;
+}
 @media screen and (max-width: 500px) {
     .container {
       display: none;

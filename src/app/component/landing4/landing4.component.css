@@ -1,3 +1,10 @@
+.mat-mdc-raised-button:not(:disabled){
+    background-color: var(--color-second);
+}
+.mat-mdc-raised-button:not(:disabled){
+    color: #ffffff;
+}
+
 .gras{
     font-weight: bold;
 }
@@ -82,6 +89,7 @@
 
 .container_gauche_text-subtitle_content{
     align-self: center;
+    font-size: 45px;
 }
 .container_gauche_text-block1, .container_gauche_text-block2{
     flex-shrink: 0;

@@ -1,7 +1,7 @@
 <div class="container">
         <div class="onglet" *ngFor="let onglet of onglets" (click)="navigateTo(onglet)">
                 @if (onglet.getSousOnglets().length == 0){
-                        <span> {{onglet.getName()}}</span>
+                        <span class="onglet_item" > {{onglet.getName()}}</span>
                 } @else{
                         <div class="onglet_special">
                                 <div class="onglet_special_mainonglet"> {{onglet.getName()}}</div>

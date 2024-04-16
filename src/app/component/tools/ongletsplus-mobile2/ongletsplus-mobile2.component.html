@@ -1,6 +1,6 @@
 <div [ngClass]="{'container_mobile':true, 'is_clicked':isClicked}">
-    <div class="onglet" *ngFor="let onglet of onglets" (click)="navigateTo(onglet)">
-        <div [ngClass]="{'onglet_name': onglet.getSousOnglets().length == 0}" >
+    <div class="onglet" *ngFor="let onglet of onglets; let last = last" (click)="navigateTo(onglet)">
+        <div [ngClass]="{'onglet_name': onglet.getSousOnglets().length == 0, 'last-onglet': last}" >
                 <span class="test">{{onglet.getName()}}</span>
         </div>
 

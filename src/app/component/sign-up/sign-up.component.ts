@@ -4,6 +4,7 @@ import { AbstractControl, AbstractControlOptions, FormBuilder, ReactiveFormsModu
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { OngletService } from '../../services/onglet.service';
 
 export function passwordsMatchValidator() : Validators {
   return (control : AbstractControl) : ValidationErrors | null => {
@@ -29,6 +30,8 @@ export function passwordsMatchValidator() : Validators {
 
 export class SignUpComponent {
 
+  
+  ongletService = inject(OngletService)
   fb = inject(FormBuilder);
   login : boolean = false ;
   registerForm = this.fb.group({
@@ -48,7 +51,9 @@ export class SignUpComponent {
   submittedLogin = false;
 
 
-  constructor() { }
+  constructor() {
+    this.ongletService.cacherLesOnglets()
+   }
 
   get fRegister(): { [key: string]: AbstractControl } {
     return this.registerForm.controls;

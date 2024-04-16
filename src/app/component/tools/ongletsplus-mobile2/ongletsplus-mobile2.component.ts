@@ -21,6 +21,7 @@ export class OngletsplusMobile2Component {
   }
 
   navigateTo(onglet : Onglet): void{
+    console.log(onglet)
     if(onglet.getSousOnglets().length == 0){
       this.router.navigateByUrl("/"+onglet.getNameNavigate())
     } else {
