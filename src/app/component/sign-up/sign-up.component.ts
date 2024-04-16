@@ -33,23 +33,29 @@ export class SignUpComponent {
   
   ongletService = inject(OngletService)
   fb = inject(FormBuilder);
-  login : boolean = false ;
+  loginDisplay = false;
   registerForm = this.fb.group({
-    
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      firstName: ['', [Validators.required, Validators.minLength(1)]],
-      lastName: ['', [Validators.required, Validators.minLength(1)]]
-  }) ;
-  loginForm = this.fb.group({
+    email : ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+    name : ['', Validators.required],
+    confirmPassword: ['', Validators.required]
+  },  { validators : passwordsMatchValidator()}  as AbstractControlOptions)
 
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    }) ; 
+  loginForm = this.fb.group({
+    email : ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required]
+  })
+
+  loginEmail = this.loginForm.get('email')
+  loginPassword = this.loginForm.get('password')
     
   submitted = false;
   submittedLogin = false;
 
+  email = this.registerForm.get('email')
+  password = this.registerForm.get('password')
+  name = this.registerForm.get('name')
+  confirmPassword = this.registerForm.get('confirmPassword')
 
   constructor() {
     this.ongletService.cacherLesOnglets()
@@ -92,13 +98,22 @@ export class SignUpComponent {
   }
 
   goToRegister() : void {
-    this.login = false
+    this.loginDisplay = false
   }
 
   goToLogin() : void {
-    this.login = true
+    this.loginDisplay = true
   }
 
+  signUp() {
+
+  }
+
+  login(){
+
+  }
+
+  signInGoogle(){}
 
 
 }
