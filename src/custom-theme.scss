@@ -1,0 +1,102 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$color-second : (
+  50: #e1f2f1,
+  100: #b3dfdf,
+  200: #80cbcb,
+  300: #4db7b7,
+  400: #29a7a7,
+  500: #4c94a4, // Couleur principale
+  600: #227d7d,
+  700: #1b6b6b,
+  800: #145858,
+  900: #0d4040,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
+
+$color-third: (
+  50: #f4f1e1,
+  100: #e2dcb3,
+  200: #cfc680,
+  300: #bbb04d,
+  400: #aca429,
+  500: #9a8443, // Couleur principale
+  600: #887220,
+  700: #755f1b,
+  800: #624d14,
+  900: #4f3b0d,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$mowam-solution-app2-primary: mat.define-palette($color-second);
+$mowam-solution-app2-second: mat.define-palette($color-third);
+$mowam-solution-app2-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$mowam-solution-app2-warn: mat.define-palette(mat.$red-palette);
+$custom-secondary: mat.define-palette(mat.$cyan-palette, 500, 300, 700);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$mowam-solution-app2-theme: mat.define-light-theme((
+  color: (
+    primary: $mowam-solution-app2-primary,
+    accent: $mowam-solution-app2-accent,
+    warn: $mowam-solution-app2-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+.secondary-color {
+  color: mat.get-color-from-palette($custom-secondary, 500);
+  background-color: mat.get-color-from-palette($custom-secondary, 300);
+}
+
+.secondary-color-hover:hover {
+  background-color: mat.get-color-from-palette($custom-secondary, 700);
+}
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($mowam-solution-app2-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
