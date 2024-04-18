@@ -13,7 +13,6 @@ export class EffectTestDirective implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        console.log("mes datas", entry)
         if (entry.isIntersecting) {
           this.renderer.addClass(this.el.nativeElement,'swip-on-base')
      

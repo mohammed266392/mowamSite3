@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgClass, NgFor } from '@angular/common';
-import { Router } from '@angular/router';
-import { Onglet, SousOnglet } from '../../../models/object';
+import { Component, Input, OnInit } from "@angular/core";
+import { NgClass, NgFor } from "@angular/common";
+import { Router } from "@angular/router";
+import { Onglet, SousOnglet } from "../../../models/object";
 
 @Component({
     selector: 'app-onglets-plus',
@@ -10,6 +10,7 @@ import { Onglet, SousOnglet } from '../../../models/object';
     standalone: true,
     imports: [NgClass, NgFor]
 })
+
 export class OngletsPlusComponent {
   @Input() onglets: Onglet[] = [];
   constructor(private router: Router) { }
@@ -19,8 +20,6 @@ export class OngletsPlusComponent {
       this.router.navigateByUrl("/"+onglet.getNameNavigate())
     } else {
       this.onglets[onglet.getId()].toogleSousOngletsIsOpen()
-      console.log('cette onglet ',onglet.getId())
-      console.log('cette onglet est open : ',this.onglets[onglet.getId()])
     }
   }
 
