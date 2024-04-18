@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { OngletService } from '../../services/onglet.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 export function passwordsMatchValidator() : Validators {
   return (control : AbstractControl) : ValidationErrors | null => {
@@ -31,8 +33,11 @@ export function passwordsMatchValidator() : Validators {
 export class SignUpComponent {
 
   
-  ongletService = inject(OngletService)
+  ongletService = inject(OngletService);
   fb = inject(FormBuilder);
+  authService = inject(AuthService);
+  router = inject(Router)
+
   loginDisplay = false;
   registerForm = this.fb.group({
     email : ['', [Validators.required, Validators.email]],
@@ -49,8 +54,6 @@ export class SignUpComponent {
   loginEmail = this.loginForm.get('email')
   loginPassword = this.loginForm.get('password')
     
-  submitted = false;
-  submittedLogin = false;
 
   email = this.registerForm.get('email')
   password = this.registerForm.get('password')
@@ -60,28 +63,6 @@ export class SignUpComponent {
   constructor() {
     this.ongletService.cacherLesOnglets()
    }
-
-  get fRegister(): { [key: string]: AbstractControl } {
-    return this.registerForm.controls;
-  }
-  get fLogin(): { [key: string]: AbstractControl } {
-    return this.loginForm.controls;
-  }
-  onSubmitRegister() {
-    // Ici, vous pouvez gérer la soumission de votre formulaire
-    this.submitted = true
-    if(this.submitted){
-      return
-    }
-  }
-
-  onSubmitLogin() {
-    
-    this.submittedLogin = true
-    if(this.submittedLogin){
-      return
-    }
-  }
 
   goToRegister() : void {
     this.loginDisplay = false
@@ -95,7 +76,13 @@ export class SignUpComponent {
 
   }
 
-  login(){
+  async login(){
+    const {email, password} = this.loginForm.value
+    if(!this.loginForm.valid || !email || !password){
+      return
+    }
+    await this.authService.login(email, password)
+    this.router.navigateByUrl("/workspace")
 
   }
 
