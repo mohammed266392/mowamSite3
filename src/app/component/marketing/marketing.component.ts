@@ -9,8 +9,9 @@ import { NosServicesDetailsComponent } from '../nos-services-details/nos-service
   templateUrl: './marketing.component.html',
   styleUrl: './marketing.component.css'
 })
+
 export class MarketingComponent {
-  title : string = "Site E-commerce"
+  title : string = "Marketing"
   subtitle : string = "Pourquoi choisir notre service de marketing ?"
   phrases: Phrase[] = [
     {
