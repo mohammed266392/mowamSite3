@@ -6,7 +6,9 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { OngletService } from '../../services/onglet.service';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderService } from '../../services/header.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 export function passwordsMatchValidator() : Validators {
   return (control : AbstractControl) : ValidationErrors | null => {
@@ -24,7 +26,7 @@ export function passwordsMatchValidator() : Validators {
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [CommonModule,  MatFormField, MatInputModule, MatButtonModule, ReactiveFormsModule],
+  imports: [CommonModule,  MatFormField, MatInputModule, MatButtonModule, ReactiveFormsModule, MatProgressSpinnerModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
@@ -60,7 +62,11 @@ export class SignUpComponent {
   name = this.registerForm.get('name')
   confirmPassword = this.registerForm.get('confirmPassword')
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private headerService: HeaderService) {
+    const data = this.route.snapshot.data;
+    if (data['header']) {
+      this.headerService.setHeaderComponent(data['header']);
+    }
     this.ongletService.cacherLesOnglets()
    }
 

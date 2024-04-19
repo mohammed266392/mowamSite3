@@ -24,4 +24,9 @@ export class Header3Component {
   logo : string = "./../../assets/images/logo_solution_piscine.svg"
   menuBurgerIsClicked : boolean = false
 
+  async logout() : Promise<void> {
+    await this.auth.signOut()
+    this.router.navigateByUrl("/sign-up")
+  }
+
 }

@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 
 import { toSignal } from '@angular/core/rxjs-interop';
 
-import { Auth, UserCredential, authState, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, UserCredential, authState, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,9 @@ export class AuthService {
 
   login(email : string, password : string) : Promise<UserCredential> {
     return signInWithEmailAndPassword(this.firebaseAuth, email, password)
+  }
+  signOut() {
+    return signOut(this.firebaseAuth)
   }
 }
 

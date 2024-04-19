@@ -18,13 +18,10 @@
     </button>
 
     <mat-menu #userMenu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="logout()">
             <mat-icon>logout</mat-icon>
         </button>
     </mat-menu>
-    <!-- {{currentUser()}} -->
-    <!-- <div class="header_droite" (click)="getSomeThing()">
-        {{this.connexion()?.email}}
-    </div> -->
+    
     
 </div>
