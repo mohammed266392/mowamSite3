@@ -77,11 +77,11 @@ export class SignUpComponent {
   }
 
   async login(){
-    // const {email, password} = this.loginForm.value
-    // if(!this.loginForm.valid || !email || !password){
-    //   return
-    // }
-    // await this.authService.login(email, password)
+    const {email, password} = this.loginForm.value
+    if(!this.loginForm.valid || !email || !password){
+      return
+    }
+    await this.authService.login(email, password)
     this.router.navigateByUrl("/workspace")
 
   }
