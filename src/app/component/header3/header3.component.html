@@ -8,8 +8,23 @@
             
         </div>
     </div>
-    <div class="header_droite" (click)="getSomeThing()">
+    <button 
+    class="test"
+    *ngIf="currentUser()"
+    [mat-menu-trigger-for]="userMenu"
+    >
+        {{currentUser()?.email}}
+        <mat-icon color="primary">expand_more</mat-icon>
+    </button>
+
+    <mat-menu #userMenu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+        </button>
+    </mat-menu>
+    <!-- {{currentUser()}} -->
+    <!-- <div class="header_droite" (click)="getSomeThing()">
         {{this.connexion()?.email}}
-    </div>
+    </div> -->
     
 </div>
