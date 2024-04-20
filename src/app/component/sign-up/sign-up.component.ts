@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from '../../services/header.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NotificationService } from '../../services/notification.service';
 
 export function passwordsMatchValidator() : Validators {
   return (control : AbstractControl) : ValidationErrors | null => {
@@ -38,7 +39,9 @@ export class SignUpComponent {
   ongletService = inject(OngletService);
   fb = inject(FormBuilder);
   authService = inject(AuthService);
-  router = inject(Router)
+  router = inject(Router);
+  notification = inject(NotificationService);
+  loading = this.notification.loading ;
 
   loginDisplay = false;
   registerForm = this.fb.group({
@@ -87,8 +90,16 @@ export class SignUpComponent {
     if(!this.loginForm.valid || !email || !password){
       return
     }
-    await this.authService.login(email, password)
-    this.router.navigateByUrl("/workspace")
+    this.notification.showLoading()
+    this.authService.login(email, password).then( () => {
+      this.router.navigateByUrl("/workspace")
+      this.notification.success("Vous êtes connecté")
+    }
+    ).catch( (error) => {
+      this.notification.fireBaseError(error)
+    }).finally( () => {
+      this.notification.hidLoading()
+    })
 
   }
 

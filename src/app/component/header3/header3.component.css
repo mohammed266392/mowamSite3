@@ -39,6 +39,10 @@
   font-size:  var(--size-font-header);
 }
 
+
+
+
+
 @media screen and (max-width:500px) {
 .header_gauche_image_logo{
   height: calc(var(--largeur-header) - 18px);

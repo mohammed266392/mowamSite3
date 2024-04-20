@@ -2,6 +2,7 @@
     <div class="container_box">
         <div [ngClass]="{'container_box_slider' : true, 'loginDisplay': loginDisplay}">
             <div class="container_box_slider--register">
+                <div class="container_box_slider--register-title">Inscription</div>
                 <div class="formulaire">
                     <form  [formGroup]="registerForm" class="card_form" (ngSubmit)="signUp()">
                       <div class="card_form_container">
@@ -41,12 +42,14 @@
                       </mat-error>
                       <div class="card_form_submit">
                           <button type="submit" mat-raised-button color="primary">Inscription</button>
+                          <button class="button--deja-inscrit" (click)="goToLogin()">déjà inscrit</button>
                       </div>
                       </div>
                     </form>
                 </div>
             </div>
             <div class="container_box_slider--login">
+                <div class="container_box_slider--login-title">Connexion</div>
                  <div class="formulaire">
                   <form [formGroup]="loginForm" class="card_form" (ngSubmit)="login()">
                     <div class="card_form_container">
@@ -105,4 +108,4 @@
   </div>
 </div>
 <!-- <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner> -->
-<mat-progress-spinner class="spinner" mode="indeterminate" diameter="50" *ngIf="true"></mat-progress-spinner>
+<mat-progress-spinner class="spinner" mode="indeterminate" diameter="50" *ngIf="loading()"></mat-progress-spinner>
