@@ -10,6 +10,12 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { WorkSpaceComponent } from './component/work-space/work-space.component';
 import { Header3Component } from './component/header3/header3.component';
 import { Header2Component } from './component/header2/header2.component';
+import {AuthGuard, redirectLoggedInTo, redirectUnauthorizedTo} from '@angular/fire/auth-guard'
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['sign-up']);
+const redirectLoggedInHome = () => redirectLoggedInTo(['workspace'])
+
+
 
 export const routes: Routes = [
     
@@ -21,8 +27,24 @@ export const routes: Routes = [
     { path: 'e-commerce', component: ECommerceComponent, data: { header: Header2Component } },
     { path: 'marketing', component: MarketingComponent, data: { header: Header2Component } },
     { path: 'a-propos', component: AProposComponent, data: { header: Header2Component } },
-    { path: 'sign-up', component: SignUpComponent , data: { header: Header2Component }},
-    { path: 'workspace', component: WorkSpaceComponent, data: { header: Header3Component } }
+    { 
+        path: 'sign-up', 
+        component: SignUpComponent ,
+        canActivate:[AuthGuard], 
+        data: { 
+            header: Header2Component,
+            authGuardPipe : redirectLoggedInHome
+        }
+    },
+    {       
+        path: 'workspace', 
+        component: WorkSpaceComponent, 
+        canActivate:[AuthGuard],
+        data: { 
+            header: Header3Component,
+            authGuardPipe : redirectUnauthorizedToLogin
+        } 
+    }
 
 // autres routes...
 ];

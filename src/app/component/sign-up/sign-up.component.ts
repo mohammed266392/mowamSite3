@@ -74,15 +74,30 @@ export class SignUpComponent {
    }
 
   goToRegister() : void {
-    this.loginDisplay = false
+    this.loginDisplay = false;
   }
 
   goToLogin() : void {
-    this.loginDisplay = true
+    this.loginDisplay = true;
   }
 
-  signUp() {
-
+  async signUp() {
+    const {name, email, password}  = this.registerForm.value;
+    if(!this.registerForm.valid || !name || !password || !email ){
+      return
+    }
+    try {
+      this.notification.showLoading();
+      const {user} = await this.authService.signUp(email,password);
+      this.authService.setDisplayName(user, name )
+      this.notification.success("Création de compte réussi")
+      this.router.navigateByUrl("/workspace")
+    } catch (error : any) {
+      this.notification.fireBaseError(error)
+    } finally {
+      this.notification.hidLoading()
+    }
+  
   }
 
   async login(){

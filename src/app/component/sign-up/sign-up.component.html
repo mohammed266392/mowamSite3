@@ -2,46 +2,46 @@
     <div class="container_box">
         <div [ngClass]="{'container_box_slider' : true, 'loginDisplay': loginDisplay}">
             <div class="container_box_slider--register">
-                <div class="container_box_slider--register-title">Inscription</div>
+                <div class="container_box_slider--register-title">Créer ton compte</div>
                 <div class="formulaire">
                     <form  [formGroup]="registerForm" class="card_form" (ngSubmit)="signUp()">
                       <div class="card_form_container">
                         <mat-form-field class="card_form_field">
-                          <mat-label>Name</mat-label>
+                          <mat-label>Nom</mat-label>
                           <input matInput formControlName="name">
                           <mat-error *ngIf="name?.hasError('required')" >
-                              Name is required
+                              Nom est requis
                           </mat-error>
                         </mat-form-field>
                         <mat-form-field class="card_form_field">
-                          <mat-label>Email adress</mat-label>
+                          <mat-label>Adresse email</mat-label>
                           <input matInput formControlName="email">
                           <mat-error *ngIf="email?.hasError('required')" >
-                              Email adress is required
+                            Adresse email est requis
                           </mat-error>
                           <mat-error *ngIf="email?.hasError('email')" >
-                              Please enter valid email
+                              Entrez un email valide
                           </mat-error>
                       </mat-form-field>
                       <mat-form-field class="card_form_field">
                           <mat-label>Password</mat-label>
                           <input type="password" matInput formControlName="password">
                           <mat-error *ngIf="password?.hasError('required')" >
-                              Password is required
+                              Mot de passe est requis
                           </mat-error>
                       </mat-form-field>
                       <mat-form-field class="card_form_field">
-                          <mat-label>Confirm password</mat-label>
+                          <mat-label>Confirmation mot-de-passe</mat-label>
                           <input type="password" matInput formControlName="confirmPassword">
                           <mat-error *ngIf="confirmPassword?.hasError('required')" >
-                              confirmPassword is required
+                            Confirmation de mot-de-passe est requis
                           </mat-error>
                       </mat-form-field>
                       <mat-error *ngIf="registerForm.hasError('passwordsDontMatch')" >
-                          Passwor don't match
+                          Mot-de-passe ne match pas
                       </mat-error>
                       <div class="card_form_submit">
-                          <button type="submit" mat-raised-button color="primary">Inscription</button>
+                          <button type="submit" mat-raised-button color="primary">Créer</button>
                           <button class="button--deja-inscrit" (click)="goToLogin()">déjà inscrit</button>
                       </div>
                       </div>
