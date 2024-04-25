@@ -9,6 +9,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule,DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { NotificationService } from '../../services/notification.service';
+import { OrderService } from '../../services/order.service';
+import { Order } from '../../models/order';
 
 const MY_DATE_FORMATS = {
   parse: {
@@ -47,13 +50,14 @@ export class WorkSpaceComponent {
   statusOptions = ['En cours', 'En analyse', 'Finis', 'Annulé']
 
   fb = inject(NonNullableFormBuilder);
+  notification = inject(NotificationService);
+  orderService = inject(OrderService)
 
   orderForm = this.fb.group({
-    uid : [''],
     companyName : [''],
     fullName: [''],
     email : [''],
-    dateOrder: Date,
+    dateOrder: [Date],
     status:[''],
     ca:['']
   })
@@ -76,6 +80,17 @@ export class WorkSpaceComponent {
   }
 
   save(){
+    if(!this.orderForm.valid){
+      this.notification.error("Les éléments renseignées ne sont pas aux normes")
+      return;
+    }
 
+    const{companyName, fullName,email, dateOrder, status, ca} = this.orderForm.value ;
+
+
+    const orderInstance = new Order(companyName,fullName,email, new Date(), status, ca);
+
+   this.orderService.add(orderInstance)
+ 
   }
 }
