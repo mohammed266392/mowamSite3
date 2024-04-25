@@ -1,1 +1,64 @@
-<p>work-space works!</p>
+<div class="container">
+    <div class="container_order">
+        <div class="container_order_list">
+
+        </div>
+        <div class="container_order_add">
+            <form [formGroup]="orderForm" class="card_form" (ngSubmit)="save()">
+                
+                <div class="container_order_add_input">
+                    <mat-form-field class="card_form_field">
+                        <mat-label>Nom entreprise</mat-label>
+                        <input matInput formControlName="companyName">
+                        <mat-error *ngIf="companyName?.hasError('required')" >
+                            Nom entreprise est requis
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="card_form_field">
+                        <mat-label>Nom et Prenom</mat-label>
+                        <input matInput formControlName="fullName">
+                        <mat-error *ngIf="fullName?.hasError('required')" >
+                            Nom et Prénom est requis
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="card_form_field">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+                        <mat-error *ngIf="email?.hasError('required')" >
+                            Email est requis
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="card_form_field">
+                        <mat-label>Date de commande</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dateOrder">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error *ngIf="dateOrder?.hasError('required')" >
+                            date de commande est requis
+                        </mat-error>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Status</mat-label>
+                        <mat-select formControlName="status">
+                          <mat-option *ngFor="let status of statusOptions" [value]="status">
+                            {{ status }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+
+                    <mat-form-field class="card_form_field">
+                        <mat-label>Chiffre d'affaire</mat-label>
+                        <input matInput formControlName="ca">
+                    </mat-form-field>
+                </div>
+               
+                
+                <div class="card_form_submit">
+                    <button type="submit" mat-raised-button color="primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

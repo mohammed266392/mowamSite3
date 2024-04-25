@@ -1,0 +1,13 @@
+.container_order_add_input{
+    display: flex;
+    gap: 10px;
+}
+
+
+
+@media screen and (max-width:800px) {
+    .container_order_add_input{
+        flex-direction: column;
+    }
+    
+}

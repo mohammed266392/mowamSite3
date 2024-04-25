@@ -29,4 +29,8 @@ export class Header3Component {
     this.router.navigateByUrl("/sign-up")
   }
 
+  goToWebSite(){
+    this.router.navigateByUrl("/home")
+  }
+
 }

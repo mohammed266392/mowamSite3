@@ -14,11 +14,21 @@
     >
         {{currentUser()?.email}}
         <mat-icon color="primary">expand_more</mat-icon>
+        
     </button>
 
     <mat-menu #userMenu="matMenu">
+        <button mat-menu-item >
+            <mat-icon color="primary">home</mat-icon>
+        </button>
+        <button mat-menu-item (click)="goToWebSite()">
+            <mat-icon color="primary">public</mat-icon>
+        </button>
+        <button mat-menu-item>
+            <mat-icon color="primary">dashboard</mat-icon>
+        </button>
         <button mat-menu-item (click)="logout()">
-            <mat-icon>logout</mat-icon>
+            <mat-icon color="primary">logout</mat-icon>
         </button>
     </mat-menu>
     
