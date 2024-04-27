@@ -12,12 +12,21 @@ export class NotificationService {
 
   loading = signal(false)
 
+  loading2 = signal(false)
+
   
   showLoading(){
     this.loading.set(true)
   }
   hidLoading(){
     this.loading.set(false)
+  }
+
+  showLoading2(){
+    this.loading2.set(true)
+  }
+  hidLoading2(){
+    this.loading2.set(false)
   }
 
   success(message : string){

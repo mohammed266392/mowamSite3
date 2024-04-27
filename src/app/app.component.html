@@ -2,4 +2,5 @@
     <ng-container *ngComponentOutlet="headerComponent"></ng-container>
     <router-outlet></router-outlet>
     <app-footer2></app-footer2>
+    <mat-progress-spinner class="spinner" mode="indeterminate" diameter="50" *ngIf="loading2()"></mat-progress-spinner>
 </div>

@@ -77,6 +77,7 @@ export class WorkSpaceComponent {
       this.headerService.setHeaderComponent(data['header']);
     }
     this.dateAdapter.setLocale('fr');
+    this.notification.hidLoading2();
   }
 
   save(){

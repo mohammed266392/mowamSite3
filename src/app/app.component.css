@@ -1,3 +1,9 @@
 /* .container{
     margin-bottom: var(--largeur-footer);
 } */
+.spinner{
+    position: absolute;
+    top: 40%;
+    z-index: 6;
+    left: 50%;
+}
