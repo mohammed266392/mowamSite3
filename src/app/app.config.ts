@@ -9,6 +9,8 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 import { routes } from './app.routes';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FirebaseTimestampPipe } from './pipes/FirebaseTimestampPipe';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -29,7 +31,8 @@ export const appConfig: ApplicationConfig = {
         provideAuth(() => getAuth()),
         provideFirestore(() => getFirestore()),
         provideStorage(() => getStorage()),
-        MatSnackBarModule
+        MatSnackBarModule,
+        AngularFirestore,
     ])
   ]
   };

@@ -2,6 +2,45 @@
     <div class="container_order">
         <div class="container_order_list">
 
+            <div class="container">
+                <mat-table [dataSource]="orders" class="mat-elevation-z8">
+              
+                  <!-- Column Definitions -->
+                  <ng-container matColumnDef="companyName">
+                    <mat-header-cell *matHeaderCellDef> Company Name </mat-header-cell>
+                    <mat-cell *matCellDef="let order"> {{order.companyName}} </mat-cell>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="fullName">
+                    <mat-header-cell *matHeaderCellDef> Full Name </mat-header-cell>
+                    <mat-cell *matCellDef="let order"> {{order.fullName}} </mat-cell>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                    <mat-cell *matCellDef="let order"> {{order.email}} </mat-cell>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="dateOrder">
+                    <mat-header-cell *matHeaderCellDef> Date of Order </mat-header-cell>
+                    <mat-cell *matCellDef="let order"> {{order.dateOrder | firebaseTimestamp | date: 'dd/MM/yyyy'}} </mat-cell>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="status">
+                    <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                    <mat-cell *matCellDef="let order"> {{order.status}} </mat-cell>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="ca">
+                    <mat-header-cell *matHeaderCellDef> CA </mat-header-cell>
+                    <mat-cell *matCellDef="let order"> {{order.ca}} </mat-cell>
+                  </ng-container>
+              
+                  <!-- Row Definitions -->
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+              </div>
         </div>
         <div class="container_order_add">
             <form [formGroup]="orderForm" class="card_form" (ngSubmit)="save()">

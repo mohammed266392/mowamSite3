@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderService } from '../../services/header.service';
 import { NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +12,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { NotificationService } from '../../services/notification.service';
 import { OrderService } from '../../services/order.service';
 import { Order } from '../../models/order';
+import { MatTableModule } from '@angular/material/table';
+import { FirebaseTimestampPipe } from '../../pipes/FirebaseTimestampPipe';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const MY_DATE_FORMATS = {
   parse: {
@@ -36,7 +39,9 @@ const MY_DATE_FORMATS = {
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    FirebaseTimestampPipe
   ],
   templateUrl: './work-space.component.html',
   styleUrl: './work-space.component.css',
@@ -45,7 +50,13 @@ const MY_DATE_FORMATS = {
     { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }
   ]
 })
-export class WorkSpaceComponent {
+export class WorkSpaceComponent implements OnInit {
+
+
+  displayedColumns: string[] = ['companyName', 'fullName', 'email', 'dateOrder', 'status', 'ca'];
+  orders: Observable<Order[]>;
+
+
 
   statusOptions = ['En cours', 'En analyse', 'Finis', 'Annulé']
 
@@ -78,6 +89,19 @@ export class WorkSpaceComponent {
     }
     this.dateAdapter.setLocale('fr');
     this.notification.hidLoading2();
+    this.orders = this.orderService.orders$
+  }
+  ngOnInit(): void {
+    // const test = this.orderService.getList()
+    // console.log("voir mon test ",test )
+    // this.orderService.getList().then(orders => {
+    //   this.dataSource = orders
+    //   console.log("sfsd",orders) ;
+    // }).catch(error => {
+    //   console.error('Erreur lors de la récupération des orders:', error);
+    // });
+    this.orderService.getAllOrders();
+
   }
 
   save(){
@@ -88,10 +112,10 @@ export class WorkSpaceComponent {
 
     const{companyName, fullName,email, dateOrder, status, ca} = this.orderForm.value ;
 
+    const orderInstance = this.orderForm.value as unknown as Order
+    // const orderInstance = new Order(companyName,fullName,email, new Date(), status, ca);
 
-    const orderInstance = new Order(companyName,fullName,email, new Date(), status, ca);
-
-   this.orderService.add(orderInstance)
+    this.orderService.addOrder(orderInstance)
  
   }
 }
