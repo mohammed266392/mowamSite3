@@ -15,6 +15,7 @@ import { Order } from '../../models/order';
 import { MatTableModule } from '@angular/material/table';
 import { FirebaseTimestampPipe } from '../../pipes/FirebaseTimestampPipe';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
 
 const MY_DATE_FORMATS = {
   parse: {
@@ -41,7 +42,8 @@ const MY_DATE_FORMATS = {
     MatNativeDateModule,
     MatSelectModule,
     MatTableModule,
-    FirebaseTimestampPipe
+    FirebaseTimestampPipe,
+    MatButtonModule
   ],
   templateUrl: './work-space.component.html',
   styleUrl: './work-space.component.css',

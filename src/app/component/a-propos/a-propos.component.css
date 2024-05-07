@@ -84,12 +84,45 @@
 
 .container_second{
     display: flex;
+    flex-direction: column;
 }
 
 .image-about{
     width: 30%;
     object-fit: cover;
 }
+
+.container_second_telecharger_CV{
+    display: flex;
+    margin-bottom: 40px;
+}
+
+
+.button-64 {
+    margin: auto;
+    align-items: center;
+    background-image: linear-gradient(144deg,var(--color-third), #ffffff 50%,var(--color-second));
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba( var(--main-color3-rgba), 0.2) 0 15px 30px -5px;
+    
+    box-sizing: border-box;
+    color: var(--color-landing-page);
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    color: var(--color-landing-page);
+  }
 
 @keyframes trait {
     from{

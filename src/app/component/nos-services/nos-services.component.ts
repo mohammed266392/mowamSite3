@@ -2,8 +2,9 @@ import { NgClass, NgFor } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ItemService } from '../../models/object';
 import { OngletService } from '../../services/onglet.service';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { routes } from '../../app.routes';
+import { HeaderService } from '../../services/header.service';
 
 @Component({
   selector: 'app-nos-services',
@@ -21,8 +22,18 @@ export class NosServicesComponent implements OnInit, OnDestroy{
   private delay: number = 50; // Délai initial rapide
   private delaySatisfaction: number = 20; // Délai initial rapide
   items : ItemService[] = [];
-  ongletService = inject(OngletService)
-  router = inject(Router)
+  ongletService = inject(OngletService);
+  router = inject(Router);
+  route = inject(ActivatedRoute);
+  headerService = inject(HeaderService);
+
+  constructor(){
+    this.ongletService.cacherLesOnglets();
+    const data = this.route.snapshot.data;
+    if (data['header']) {
+      this.headerService.setHeaderComponent(data['header']);
+    }
+  }
 
   ngOnInit() {
     this.startCounter();

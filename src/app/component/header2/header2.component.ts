@@ -63,4 +63,8 @@ export class Header2Component {
     this.router.navigateByUrl("/sign-up")
   }
 
+  navigateToHome() : void {
+    this.router.navigateByUrl("/home")
+  }
+
 }

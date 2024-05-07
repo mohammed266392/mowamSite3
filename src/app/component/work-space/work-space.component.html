@@ -2,8 +2,10 @@
     <div class="container_order">
         <div class="container_order_list">
 
-            <div class="container">
-                <mat-table [dataSource]="orders" class="mat-elevation-z8">
+          <div class="container_order_list_reporting"> List des commandes</div>
+
+            <div class="container_order_list_reporting_table">
+                <mat-table [dataSource]="orders" class="mat-elevation-z8 container_order_list_reporting_table-container">
               
                   <!-- Column Definitions -->
                   <ng-container matColumnDef="companyName">
@@ -33,9 +35,16 @@
               
                   <ng-container matColumnDef="ca">
                     <mat-header-cell *matHeaderCellDef> CA </mat-header-cell>
-                    <mat-cell *matCellDef="let order"> {{order.ca}} </mat-cell>
+                    <mat-cell *matCellDef="let order" class="container_table_cell_last"> 
+                      <div>{{order.ca}} </div>
+                      <div class="container_table_cell_last_modification">
+                        <div><mat-icon color="primary">edit</mat-icon></div>
+                        <div><mat-icon color="primary">delete</mat-icon></div>
+                      </div>
+                      <!-- <mat-icon>delete</mat-icon> -->
+                    </mat-cell>
                   </ng-container>
-              
+                
                   <!-- Row Definitions -->
                   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
@@ -93,7 +102,6 @@
                     </mat-form-field>
                 </div>
                
-                
                 <div class="card_form_submit">
                     <button type="submit" mat-raised-button color="primary">Save</button>
                 </div>
