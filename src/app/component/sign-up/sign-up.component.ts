@@ -6,6 +6,7 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { OngletService } from '../../services/onglet.service';
 import { AuthService } from '../../services/auth.service';
+import { AuthGoService } from '../../services/authGo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from '../../services/header.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -38,6 +39,7 @@ export class SignUpComponent {
   
   ongletService = inject(OngletService);
   fb = inject(FormBuilder);
+  authGoService = inject(AuthGoService);
   authService = inject(AuthService);
   router = inject(Router);
   notification = inject(NotificationService);
@@ -100,22 +102,42 @@ export class SignUpComponent {
   
   }
 
-  async login(){
+  // async login(){
+  //   const {email, password} = this.loginForm.value
+  //   if(!this.loginForm.valid || !email || !password){
+  //     return
+  //   }
+  //   this.notification.showLoading()
+  //   this.authService.login(email, password).then( () => {
+  //     this.router.navigateByUrl("/workspace")
+  //     this.notification.success("Vous êtes connecté")
+  //   }
+  //   ).catch( (error) => {
+  //     this.notification.fireBaseError(error)
+  //   }).finally( () => {
+  //     this.notification.hidLoading()
+  //   })
+
+  // }
+
+  async login() {
     const {email, password} = this.loginForm.value
     if(!this.loginForm.valid || !email || !password){
       return
     }
-    this.notification.showLoading()
-    this.authService.login(email, password).then( () => {
-      this.router.navigateByUrl("/workspace")
-      this.notification.success("Vous êtes connecté")
-    }
-    ).catch( (error) => {
-      this.notification.fireBaseError(error)
-    }).finally( () => {
-      this.notification.hidLoading()
-    })
-
+    this.authGoService.login(email, password).subscribe({
+      next: (res) => {
+        // this.authService.saveToken(res.token);
+        // this.router.navigateByUrl("/workspace")
+        window.location.href = 'http://localhost:4201/';
+        console.log('Connecté ! Token :', res.token);
+        // redirige vers dashboard par exemple
+      },
+      error: (err) => {
+        console.error(err);
+        // this.error = 'Échec de la connexion.';
+      }
+    });
   }
 
   signInGoogle(){}

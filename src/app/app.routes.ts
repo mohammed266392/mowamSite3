@@ -39,7 +39,7 @@ export const routes: Routes = [
     {       
         path: 'workspace', 
         component: WorkSpaceComponent, 
-        canActivate:[AuthGuard],
+        // canActivate:[AuthGuard],
         data: { 
             header: Header3Component,
             authGuardPipe : redirectUnauthorizedToLogin
