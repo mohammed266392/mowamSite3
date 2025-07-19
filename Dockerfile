@@ -17,6 +17,7 @@ FROM nginx:alpine
 COPY --from=builder /app/dist/ /usr/share/nginx/html
 
 RUN sed -i 's| root   /usr/share/nginx/html;| root   /usr/share/nginx/html/mowam-site3/browser;|g' /etc/nginx/conf.d/default.conf
+RUN sed -i 's|server_name  localhost;|server_name  _;|g' /etc/nginx/conf.d/default.conf
 
 # Copie optionnelle de ton propre fichier de config nginx si besoin
 # COPY nginx.conf /etc/nginx/nginx.conf
