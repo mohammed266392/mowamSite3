@@ -121,23 +121,13 @@ export class SignUpComponent {
   // }
 
   async login() {
+    console.log("AA")
     const {email, password} = this.loginForm.value
     if(!this.loginForm.valid || !email || !password){
       return
     }
-    this.authGoService.login(email, password).subscribe({
-      next: (res) => {
-        // this.authService.saveToken(res.token);
-        // this.router.navigateByUrl("/workspace")
-        window.location.href = 'http://localhost:4201/';
-        console.log('Connecté ! Token :', res.token);
-        // redirige vers dashboard par exemple
-      },
-      error: (err) => {
-        console.error(err);
-        // this.error = 'Échec de la connexion.';
-      }
-    });
+    this.router.navigateByUrl("/workspace")
+    console.log("teszt")
   }
 
   signInGoogle(){}

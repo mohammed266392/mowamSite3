@@ -120,4 +120,7 @@ export class WorkSpaceComponent implements OnInit {
     this.orderService.addOrder(orderInstance)
  
   }
+  onTodoListApp() {
+    window.location.href = 'http://localhost:4201/';
+  }
 }
