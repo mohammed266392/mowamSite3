@@ -10,7 +10,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule,DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { NotificationService } from '../../services/notification.service';
-import { OrderService } from '../../services/order.service';
 import { Order } from '../../models/order';
 import { MatTableModule } from '@angular/material/table';
 import { FirebaseTimestampPipe } from '../../pipes/FirebaseTimestampPipe';
@@ -56,7 +55,6 @@ export class WorkSpaceComponent implements OnInit {
 
 
   displayedColumns: string[] = ['companyName', 'fullName', 'email', 'dateOrder', 'status', 'ca'];
-  orders: Observable<Order[]>;
 
 
 
@@ -64,7 +62,6 @@ export class WorkSpaceComponent implements OnInit {
 
   fb = inject(NonNullableFormBuilder);
   notification = inject(NotificationService);
-  orderService = inject(OrderService)
 
   orderForm = this.fb.group({
     companyName : [''],
@@ -91,7 +88,6 @@ export class WorkSpaceComponent implements OnInit {
     }
     this.dateAdapter.setLocale('fr');
     this.notification.hidLoading2();
-    this.orders = this.orderService.orders$
   }
   ngOnInit(): void {
     // const test = this.orderService.getList()
@@ -102,7 +98,6 @@ export class WorkSpaceComponent implements OnInit {
     // }).catch(error => {
     //   console.error('Erreur lors de la récupération des orders:', error);
     // });
-    this.orderService.getAllOrders();
 
   }
 
@@ -111,14 +106,8 @@ export class WorkSpaceComponent implements OnInit {
       this.notification.error("Les éléments renseignées ne sont pas aux normes")
       return;
     }
-
-    const{companyName, fullName,email, dateOrder, status, ca} = this.orderForm.value ;
-
-    const orderInstance = this.orderForm.value as unknown as Order
     // const orderInstance = new Order(companyName,fullName,email, new Date(), status, ca);
 
-    this.orderService.addOrder(orderInstance)
- 
   }
   onTodoListApp() {
     window.location.href = 'http://localhost:4201/';

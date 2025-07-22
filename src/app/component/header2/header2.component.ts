@@ -6,7 +6,6 @@ import { OngletsplusMobile2Component } from '../tools/ongletsplus-mobile2/onglet
 import { OngletService } from '../../services/onglet.service';
 import { Router } from '@angular/router';
 import { NotificationService } from '../../services/notification.service';
-import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header2',
@@ -19,7 +18,6 @@ export class Header2Component {
 
   router = inject(Router)
   notification = inject(NotificationService)
-  auth = inject(AuthService)
 
   onglets : Onglet[] = [
     new Onglet(0,'Home','home',[]),
@@ -56,9 +54,6 @@ export class Header2Component {
   }
 
   navigateConnection() : void {
-    if(this.auth.currentUser()){
-      this.notification.showLoading2()
-    }
     
     this.router.navigateByUrl("/sign-up")
   }

@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { OngletService } from '../../services/onglet.service';
 import { Observable } from 'rxjs';
-import { Storage, ref, getDownloadURL } from '@angular/fire/storage';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderService } from '../../services/header.service';
 
@@ -24,16 +23,10 @@ export class AProposComponent {
 
   constructor(){
     this.ongletService.cacherLesOnglets();
-    this.downloadCV();
     const data = this.route.snapshot.data;
     if (data['header']) {
       this.headerService.setHeaderComponent(data['header']);
     }
-  }
-
-  async downloadCV(){
-    const cvRef = ref(this.storage , "developer-fr-mai-2024.pdf");
-    this.cvUrl = await getDownloadURL(cvRef);
   }
 
 }

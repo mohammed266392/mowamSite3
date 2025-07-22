@@ -1,7 +1,5 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FirebaseError } from 'firebase/app';
-import { getFireBaseErrorMessage } from '../utilities/auth-errors';
 
 @Injectable({
   providedIn: 'root'
@@ -43,10 +41,6 @@ export class NotificationService {
       horizontalPosition: 'right',
       verticalPosition: 'top'
     })
-  }
-
-  fireBaseError(error : FirebaseError) {
-    this.error(getFireBaseErrorMessage(error))
   }
 
 }

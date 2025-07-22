@@ -5,7 +5,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { OngletService } from '../../services/onglet.service';
-import { AuthService } from '../../services/auth.service';
 import { AuthGoService } from '../../services/authGo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from '../../services/header.service';
@@ -40,7 +39,6 @@ export class SignUpComponent {
   ongletService = inject(OngletService);
   fb = inject(FormBuilder);
   authGoService = inject(AuthGoService);
-  authService = inject(AuthService);
   router = inject(Router);
   notification = inject(NotificationService);
   loading = this.notification.loading ;
@@ -87,17 +85,6 @@ export class SignUpComponent {
     const {name, email, password}  = this.registerForm.value;
     if(!this.registerForm.valid || !name || !password || !email ){
       return
-    }
-    try {
-      this.notification.showLoading();
-      const {user} = await this.authService.signUp(email,password);
-      this.authService.setDisplayName(user, name )
-      this.notification.success("Création de compte réussi")
-      this.router.navigateByUrl("/workspace")
-    } catch (error : any) {
-      this.notification.fireBaseError(error)
-    } finally {
-      this.notification.hidLoading()
     }
   
   }

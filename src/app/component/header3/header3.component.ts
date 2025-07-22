@@ -5,7 +5,6 @@ import { OngletsplusMobile2Component } from '../tools/ongletsplus-mobile2/onglet
 import { MatMenuModule } from '@angular/material/menu'
 import { MatIcon } from '@angular/material/icon'
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header3',
@@ -16,8 +15,6 @@ import { AuthService } from '../../services/auth.service';
 })
 export class Header3Component {
   router = inject(Router)
-  auth = inject(AuthService)
-  currentUser = this.auth.currentUser
 
 
   title : string = "MOWAM Solution"
@@ -25,7 +22,6 @@ export class Header3Component {
   menuBurgerIsClicked : boolean = false
 
   async logout() : Promise<void> {
-    await this.auth.signOut()
     this.router.navigateByUrl("/sign-up")
   }
 
