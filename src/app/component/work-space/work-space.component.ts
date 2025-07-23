@@ -112,4 +112,7 @@ export class WorkSpaceComponent implements OnInit {
   onTodoListApp() {
     window.location.href = 'http://localhost:4201/';
   }
+  onTodoListApp2() {
+    window.location.href = 'https://www.youtube.com/';
+  }
 }
