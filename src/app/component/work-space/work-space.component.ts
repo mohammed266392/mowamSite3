@@ -15,6 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { FirebaseTimestampPipe } from '../../pipes/FirebaseTimestampPipe';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
+import { environment } from '../../../environments/environment';
 
 const MY_DATE_FORMATS = {
   parse: {
@@ -53,7 +54,7 @@ const MY_DATE_FORMATS = {
 })
 export class WorkSpaceComponent implements OnInit {
 
-
+  private appTodoList = environment.appTodoList;  
   displayedColumns: string[] = ['companyName', 'fullName', 'email', 'dateOrder', 'status', 'ca'];
 
 
@@ -110,7 +111,7 @@ export class WorkSpaceComponent implements OnInit {
 
   }
   onTodoListApp() {
-    window.location.href = 'http://localhost:4201/';
+    window.location.href = `${this.appTodoList}`;
   }
   onTodoListApp2() {
     window.location.href = 'https://www.youtube.com/';

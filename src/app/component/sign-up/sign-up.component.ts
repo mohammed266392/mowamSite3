@@ -86,38 +86,45 @@ export class SignUpComponent {
     if(!this.registerForm.valid || !name || !password || !email ){
       return
     }
+    console.log("tu as bien appuyé  sur créé ton compte")
+    const credentials = {
+      email: email,
+      password: password
+    };
+    this.authGoService.users(credentials).subscribe({
+      next: (response) => {
+        console.log('Token reçu :', response.token);
+        // Tu peux ici sauvegarder le token, par exemple dans localStorage
+      },
+      error: (err) => {
+        console.error('Erreur lors de la connexion :', err);
+      }
+    })
   
   }
 
-  // async login(){
-  //   const {email, password} = this.loginForm.value
-  //   if(!this.loginForm.valid || !email || !password){
-  //     return
-  //   }
-  //   this.notification.showLoading()
-  //   this.authService.login(email, password).then( () => {
-  //     this.router.navigateByUrl("/workspace")
-  //     this.notification.success("Vous êtes connecté")
-  //   }
-  //   ).catch( (error) => {
-  //     this.notification.fireBaseError(error)
-  //   }).finally( () => {
-  //     this.notification.hidLoading()
-  //   })
-
-  // }
-
-  async login() {
-    console.log("AA")
+  async login(){
     const {email, password} = this.loginForm.value
     if(!this.loginForm.valid || !email || !password){
       return
     }
-    this.router.navigateByUrl("/workspace")
-    console.log("teszt")
-  }
-
-  signInGoogle(){}
-
-
+    const credentials = {
+      email: email,
+      password: password
+    };
+    this.notification.showLoading()
+    this.authGoService.login(credentials).subscribe({
+      next: (response) => {
+        console.log('Token reçu :', response.token);
+        this.router.navigateByUrl("/workspace")
+        this.notification.success("Vous êtes connecté")
+        this.notification.hidLoading()
+        // Tu peux ici sauvegarder le token, par exemple dans localStorage
+      },
+      error: (err) => {
+        console.error('Erreur lors de la connexion :', err);
+      }
+    })
+}
+signInGoogle(){}
 }

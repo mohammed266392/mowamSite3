@@ -1,25 +1,38 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
+
+interface LoginRequest {
+  email: string;
+  password: string;
+}
 
 interface LoginResponse {
   token: string;
-  // Ajoute d'autres champs si ta réponse en contient (ex. userId, email...)
 }
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGoService {
-  private apiUrl = 'http://localhost:8080'; // ton URL Go
+
+
+  private apiGo =  environment.apiGo ; // ton URL Go
 
   constructor(private http: HttpClient) {}
 
-  login(email: string, password: string): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.apiUrl}/login`, {
-      email,
-      password
-    });
+
+  login(credentials: LoginRequest): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<LoginResponse>(`${this.apiGo}/login`, credentials, {headers});
+  }
+
+
+  users(credentials: LoginRequest): Observable<LoginResponse> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<LoginResponse>(`${this.apiGo}/users`,credentials, {headers});
   }
 
   // Tu peux ajouter une méthode pour sauvegarder le token si besoin :
