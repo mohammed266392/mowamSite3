@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build --prod
+RUN ng build --configuration staging
 
 # Étape 2 : serveur nginx
 FROM nginx:alpine
